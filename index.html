@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flashcards - Study</title>
+  <link rel="stylesheet" href="flash.css">
+</head>
+<body>
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<main class="content">
+  <!-- rest of your page… -->
+<h1>HOME</h1>
+Place holder
+
+</main>
+<!-- Load Header JS -->
+ <script type="module">
+    import { loadHeader } from './js/header.js';
+    loadHeader().catch(console.error);
+  </script>
+  
+  <!-- Load your master JS as a module -->
+  <script type="module" src="flash.js"></script>
+  
+    <!-- Footer placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Load footer dynamically -->
+  <script type="module">
+    import { loadFooter } from './js/footer.js';
+    loadFooter().catch(console.error);
+  </script>
+</body>
+</html>

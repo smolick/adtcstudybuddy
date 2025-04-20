@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Need To Know</title>
+  <link rel="stylesheet" href="flash.css">
+</head>
+<body>
+  <!-- Header placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- Load header dynamically -->
+  <script type="module">
+    import { loadHeader } from './js/header.js';
+    loadHeader().catch(console.error);
+  </script>
+
+  <main class="content">
+    <h1>NEED TO KNOW</h1>
+
+    <section>
+      <h2>Title 14: Aeronautics &amp; Specs</h2>
+      <p><strong>CFR</strong> - Code of Federal Regulations</p>
+      <h3>Chapter 1: Federal Aviation Administration</h3>
+      <p><strong>FAR</strong> - Federal Aviation Regulations</p>
+
+      <h4>Parts - NEED TO KNOW</h4>
+      <ul>
+        <li><b>Part 1</b>: Definitions &amp; Abbreviations</li>
+        <li><b>Part 61</b>: Certification of Pilots</li>
+        <li><b>Part 63</b>: Certification of Flight Crew other than Pilots</li>
+        <li><b>Part 65</b>: Certification of Non-Pilot Flight Crew</li>
+        <li><b>Part 71</b>: Classification of Airspace</li>
+        <li><b>Part 91</b>: General Aviation (No to little money/private)</li>
+        <li><b>Part 121</b>: Air Carrier Operations</li>
+        <li><b>Part 135</b>: Commuter Operations (Up to 29 PAX)</li>
+        <li><b>Part 139</b>: Certification of Airports (Building an airport)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Line of Authority</h2>
+      <ul>
+        <li>Ops Spec is created by an airline</li>
+        <li>Draft of Ops Spec is given to FAA</li>
+        <li>FAA reads airline's Ops Spec</li>
+        <li>FAA approves airline's Ops Spec</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Operation Certificate</h2>
+      <ul>
+        <li>Certificate Holder (Airline)</li>
+        <li>Director of Operations</li>
+        <li>Operational Control:
+			<ul>
+			<li>Exercising the authority to <b>Initiate</b>, <b>Conduct</b>, or <b>Terminate</b> flights</li>
+			</ul>
+		</li>
+        <li>Joint/Sole Responsibility (FAR 121.533)
+          <ul>
+            <li><b>Pilot in Command &amp; Dispatch - Initiate</b></li>
+           <ul>
+		   <li>Preflight Planning</li>
+            <li>Delay</li>
+            <li>Dispatch Release</li>
+			</ul>
+		   </ul>
+		   <ul>
+            <li><b>Pilot in Command - Conduct</b>:</li>
+			<ul>
+			<li>Safety of Passengers</li>
+			<li>Cargo</li>
+			<li>Crew</li>
+			<li>Aircraft</li>
+			</ul>
+			</ul>
+			<ul>
+            <li><b>Dispatch - Conduct</b>: </li>
+			<ul>
+			<li>Monitor Flight Progress</li>
+			<li>Issue Safety Information</li>
+			<li>Cancel or Redispatch</li>
+			</ul>
+			</ul>
+          </ul>
+        </li>
+    </section>
+
+    <section>
+      <h2>Duty Times</h2>
+      <h3>Dispatcher Duty Times (FAR 121.465)</h3>
+      <ul>
+        <li>10 hours scheduled/shift</li>
+        <li>8 hours rest between shifts</li>
+        <li>1 day off per week (24 hours every 7 days)</li>
+        <li>5 hours of jumpseating per year +1 hour per landing (up to half of requirement)</li>
+      </ul>
+      <h3>Pilot Duty Times</h3>
+      <ul>
+        <li>190 Flight duty period per 672 hours</li>
+		<li>14 Max hours in short-call reserve</li>
+		<li>2 Hours flight duty period can be extended due to unforeseen circumstances (on the ground) (in the air, as long as it takes)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Fatigue Rules</h2>
+      <ul>
+        <li><strong>Chronic Fatigue</strong>: Not enough rest day after day
+          <ul>
+		  <li>Solution: Several nights of extended rest</li>
+		  </ul>
+        </li>
+        <li><strong>Acute Fatigue</strong>: Not enough rest over one night
+          <ul>
+		  <li>Solution: One night of extended rest</li>
+		  </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Three Required Documents to Make a Flight Legal (FAR 121.695)</h2>
+      <ul>
+        <li>Dispatch Release (<b>FATWIVES</b>)
+          <ul>
+            <li><b>F</b>uel (Minimum Supply)</li>
+            <li><b>A</b>irports</li>
+            <li><b>T</b>rip or Tail #</li>
+            <li><b>W</b>eather Package
+            <li><b>I</b>FR (Instrument Flight Rules)</li>
+            <li><b>V</b>FR (Visual Flight Rules)</li>
+            <li><b>E</b>TOPS/<b>E</b>TP</li>
+            <li><b>S</b>ignatures (PIC &amp; DX)</li>
+            </li>
+          </ul>
+        </li>
+        <li><b>Load Manifest</b>
+          <ul>
+            <li>AC Weight</li>
+            <li>Fuel</li>
+            <li>Cargo</li>
+            <li>Crewmembers</li>
+            <li>Passengers</li>
+          </ul>
+        </li>
+        <li><b>Flight Plan</b>
+          <ul>
+            <li>Route of flight: e.g., KSAN.SID.DCT.WAYPT.DCT.STAR.KDAL</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <!-- Flashcards script (if needed) -->
+  <script type="module" src="flash.js"></script>
+
+  <!-- Footer placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Load footer dynamically -->
+  <script type="module">
+    import { loadFooter } from './js/footer.js';
+    loadFooter().catch(console.error);
+  </script>
+</body>
+</html>

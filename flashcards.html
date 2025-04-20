@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flashcards – Study</title>
+  <link rel="stylesheet" href="flash.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <script type="module">
+    import { loadHeader } from './js/header.js';
+    loadHeader().catch(console.error);
+  </script>
+<div class="content">
+  <h1>FLASHCARDS</h1>
+  <h3 align="center">Click the categories you would like to study & “Start Studying”</h3>
+
+  <div class="flashcard-row" id="flashcardRow">
+    <div class="flashcard" id="flashcard">
+      <div class="card-content" id="cardContent"></div>
+      <div class="click-zone left"  onclick="handleClickZone('backward')" title="Back"></div>
+      <div class="click-zone right" onclick="handleClickZone('forward')"  title="Forward"></div>
+    </div>
+    <div class="progress-indicator" id="progressIndicator"></div>
+  </div>
+
+  <div class="category-section">
+    <!-- checkboxes will be injected here -->
+    <div class="button-group">
+      <button onclick="uncheckAll()">Clear Selection</button>
+      <button onclick="startSelectedStudy()">Start Studying</button>
+    </div>
+  </div>
+
+  <script>
+    function uncheckAll() {
+      document.querySelectorAll('.category-section input').forEach(cb => cb.checked = false);
+      document.querySelectorAll('.category-section label').forEach(l => l.classList.remove('selected'));
+    }
+    window.uncheckAll = uncheckAll;
+  </script>
+</div>
+  <script type="module" src="flash.js"></script>
+</body>
+</html>
