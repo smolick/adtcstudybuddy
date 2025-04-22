@@ -191,12 +191,12 @@ body,
   transform: scale(1.3);
   background: #999;
 }
-/* make any image inside .content shrink to fit */
+
 .content img {
-  max-width: 100%;    /* never wider than its container */
-  height: auto;       /* keep its aspect ratio */
-  display: block;     /* remove any inline spacing */
-  margin: 0 auto;     /* center it if it’s narrower */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 /* --------------------------------------------- */
@@ -343,13 +343,18 @@ button.remove-card {
   cursor: pointer;
 }
 
+#flashcardRow button {
+  font-size: 1.2rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+}
+
 .flashcard,
 .flashcard .card-content {
-  /* prevent the user from selecting text on the card */
-  -webkit-user-select: none;  /* Safari/Chrome */
-  -moz-user-select: none;     /* Firefox */
-  -ms-user-select: none;      /* IE/Edge */
-  user-select: none;          /* standard */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* --------------------------------------------- */
