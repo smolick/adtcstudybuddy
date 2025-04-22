@@ -11,10 +11,10 @@ export const b738specslimits = [
 	{ front: "Boeing 737-800: Maximum Runway Up/Downslope permitted?", back: "+ or - 2%" },
 	{ front: "Boeing 737-800: Maximum Operating Altitude with both AC PACKs inoperative?", back: "10,000' MSL" },
 	{  front: "Boeing 737‑800: Runway Contaminates, what types and quantities will prevent taking off safely?", back:  "<ul>" +
-         "<li>Less than 3\" of dry snow</li>" +
-         "<li>Less than 1/2\" of wet snow</li>" +
-         "<li>Less than 1/2\" of slush</li>" +
-         "<li>Less than 1/2\" of standing water</li>" +
+         "<li>Less than <b>3</b>\" of dry snow</li>" +
+         "<li>Less than <b>1/2</b>\" of wet snow</li>" +
+         "<li>Less than <b>1/2</b>\" of slush</li>" +
+         "<li>Less than <b>1/2</b>\" of standing water</li>" +
          "<li>Chunks of hardened snow or ice</li>" +
          "</ul>"},
 	{ front: "Boeing 737-800: Maximum Cruise Speed (Critical Mach Number)", back: "Mach 0.82" },

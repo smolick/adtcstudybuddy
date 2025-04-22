@@ -1,4 +1,5 @@
-", back: const fars = [
+// flashcards/fars.js
+export const fars = [
   { front: "121.593", back: "Authority to Dispatch (Intermediate Stop Without Redispatch Rule)" },
   { front: "121.599", back: "Weather Conditions Familiarity Requirements" },
   { front: "121.601", back: "Required Information From Dispatcher to PIC (Weather)" },

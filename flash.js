@@ -5,16 +5,19 @@
   }
 
   const prettyNames = {
-    needtoknow:         "100% Need to Know!",
-    acronyms:           "Acronyms",
-    fars:               "FARs",
-    test:               "Test",
-    test2:              "Test2",
-    airportminimums:    "Airport Minimums",
-    cfrparts:           "14 CFR Parts",
-    acperformance:      "B737-800 Performance",
-    b738specslimits:    "B737-800 Specs/Limits",
-    wxproductsnoimages: "WX Products (No Images)",
+    needtoknow:		        	"100% Need to Know!",
+    acronyms:		       		"Acronyms",
+    fars:						"FARs",
+    test:						"Test",
+    test2:						"Test2",
+    airportminimums:			"Airport Minimums",
+    cfrparts:					"14 CFR Parts",
+    acperformance:				"B737-800 Performance",
+    b738specslimits:			"B737-800 Specs/Limits",
+    wxproductsnoimages:			"WX Products (No Images)",
+	airportdiagram:				"Airport Diagram",
+	weatherrelatedconditions:	"WX Related Conditions",
+	theatmosphere:				"The Atmosphere",
   };
   const categoryNames = Object.keys(prettyNames);
 
@@ -39,17 +42,28 @@
     return arr;
   }
 
-  function showCard() {
-    if (!flashcards.length) return;
-    const side = flipped ? 'back' : 'front';
-    // ← here’s the key change ↓
-    document.getElementById('cardContent').innerHTML =
-      flashcards[currentIndex][side];
-    const wrapper = document.getElementById('flashcard');
-    wrapper.className = `flashcard ${side}`;
-    document.getElementById('progressIndicator').textContent =
-      `Card ${currentIndex + 1} of ${flashcards.length}`;
+function showCard() {
+  if (!flashcards.length) return;
+  const { front, back, marker } = flashcards[currentIndex];
+  const side = flipped ? back : front;
+  const container = document.getElementById('cardContent');
+  container.innerHTML = side;
+  container.querySelectorAll('.marker')?.forEach(el => el.remove());
+
+if (!flipped && marker) {
+  const m = document.createElement('div');
+  m.className   = 'marker';
+  m.textContent = marker.id;
+  m.style.top   = marker.top;
+  m.style.left  = marker.left;
+  container.appendChild(m);
+}
+
+  document.getElementById('flashcard').className = `flashcard ${flipped ? 'back' : 'front'}`;
+  document.getElementById('progressIndicator').textContent =
+    `Card ${currentIndex + 1} of ${flashcards.length}`;
   }
+
 
   function handleClickZone(direction) {
     if (!flashcards.length) return;
@@ -83,7 +97,6 @@
     showCard();
   }
 
-  // build checkboxes & counts…
   const section  = document.querySelector('.category-section');
   const btnGroup = section.querySelector('.button-group');
 
@@ -117,5 +130,26 @@
 
   window.startSelectedStudy = startSelectedStudy;
   window.handleClickZone   = handleClickZone;
+
+
+  const flashRow = document.getElementById('flashcardRow');
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = 'Remove Card';
+  removeBtn.style.margin = '0.5rem';
+  removeBtn.addEventListener('click', () => {
+    if (!flashcards.length) return;
+    flashcards.splice(currentIndex, 1);
+    if (currentIndex >= flashcards.length) {
+      currentIndex = flashcards.length - 1;
+    }
+    if (flashcards.length === 0) {
+      alert('All cards removed! No cards left.');
+      flashRow.style.display = 'none';
+    } else {
+      showCard();
+    }
+  });
+  const prog = document.getElementById('progressIndicator');
+  prog.insertAdjacentElement('afterend', removeBtn);
 
 })();

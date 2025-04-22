@@ -1,0 +1,21 @@
+// flashcards/weatherrelatedconditions.js
+export const weatherrelatedconditions = [
+	{ front : `What is the lifecycle of a thunderstorm?`, back: `<ul><li>Building (Cumulus)</li><li>Mature</li><li>Dissipating</li></ul>` },
+	{ front : `Two main types of thunderstorms?`, back: `<ul><li>Air Masses</li><li>Steady State</li></ul>` },
+	{ front : `What characterizes the dissipating stage of a thunderstorm?`, back: `Rain and Downdrafts` },
+	{ front : `What are the ingredients of a thunderstorm?`, back: `<ul><li>Lift</li><li>Moisture</li><li>Instability</li></ul>` },
+	{ front : `What makes a Severe Thunderstorm?`, back: `<ul><li>3/4" Hail</li><li>50kt+ Surface Wind</li><li>Funnel Clouds (Tornados)</li></ul>` },
+	{ front : `High Pressure: Pressure Gradient Force, which way does the air move?`, back: `Down and Out` },
+	{ front : `Low  Pressure: Pressure Gradient Force, which way does the air move?`, back: `Up and In` },
+	{ front : `High Pressure: Coriolis Effect, which way does the air move?`, back: `Clockwise` },
+	{ front : `Low Pressure: Coriolis Effect, which way does the air move?`, back: `Counter-Clockwise` },
+	{ front : `High Pressure: Surface Friction, which way does the air move?`, back: `Down, Out and Clockwise` },
+	{ front : `Low  Pressure: Surface Friction, which way does the air move?`, back: `Up, In and Counter-Clockwise` },
+	{ front : `What are the three types of icing?`, back: `<ul><li>Rime</li><li>Clear</li><li>Mixed</li></ul>` },
+	{ front : `Define: Severe Icing`, back: `Ice that builds up quicker than the anti-icing system can get rid of` },
+	{ front : `What are icing conditions?`, back: `<ul><li>Visible Moisture</li><li>10°c (50°f)</li></ul>` },
+	{ front : `Define: SLD`, back: `<b>S</b>upercooled <b>L</b>arge <b>D</b>roplets` },
+	{ front : `Why is Clear ice so dangerous?`, back: `Extremely difficult to see` },
+	{ front : `Characteristics of Rime Ice`, back: `<ul><li>Small Supercooled Droplets</li><li>Milky/Spikey Texture</li></ul>` },
+	{ front : `Characteristics of Clear Ice`, back: `<ul><li>Large Supercooled Droplets</li><li>Clear/Smooth Texture</li><li>Extremely Hard to see</li></ul>` },
+];

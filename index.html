@@ -2,30 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <title>Flashcards - Study</title>
   <link rel="stylesheet" href="flash.css">
 </head>
 <body>
 <!-- HEADER -->
-<div id="header-placeholder"></div>
-<main class="content">
-  <!-- rest of your page… -->
-<h1>HOME</h1>
-Place holder
-
-</main>
 <!-- Load Header JS -->
  <script type="module">
     import { loadHeader } from './js/header.js';
     loadHeader().catch(console.error);
   </script>
+<main class="content">
+  <!-- rest of your page… -->
+<h1>HOME</h1>
+<img align="center" src="logo.png">
+
+</main>
+
   
   <!-- Load your master JS as a module -->
   <script type="module" src="flash.js"></script>
   
-    <!-- Footer placeholder -->
-  <div id="footer-placeholder"></div>
-
   <!-- Load footer dynamically -->
   <script type="module">
     import { loadFooter } from './js/footer.js';
