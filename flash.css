@@ -385,3 +385,58 @@ footer {
   margin: 0;
   font-size: 0.9em;
 }
+
+/* --------------------------------------------- */
+/* 7) Responsive tweaks for Media	        */
+/* --------------------------------------------- */
+@media (max-width: 600px) {
+  header {
+    padding: 0.5rem;
+  }
+  .nav-container {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+    padding: 0.5rem;
+  }
+  .nav-container a,
+  .dropbtn {
+    font-size: 1.2rem;
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+  .dropdown-content a {
+    padding: 0.5rem 1rem;
+    background: #ddd;
+    margin: 0.25rem 0;
+    border-radius: 4px;
+  }
+  header {
+    border-bottom: none;
+    background: #f9f9f9;
+  }
+}
+
+@media (hover: none) {
+  .content,
+  .content::before {
+    transition: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+  }
+}
+
+@media { 
+	.flashcard {
+		transform: translateZ(0);
+		will-change: transform;
+		-webkit-font-smoothing: antialiased;
+		transition: none !important;
+  }
+}
