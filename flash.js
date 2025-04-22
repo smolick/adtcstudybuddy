@@ -142,6 +142,7 @@ if (!flipped && marker) {
     if (currentIndex >= flashcards.length) {
       currentIndex = flashcards.length - 1;
     }
+flipped = false;
     if (flashcards.length === 0) {
       alert('All cards removed! No cards left.');
       flashRow.style.display = 'none';
