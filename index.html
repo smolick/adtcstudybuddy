@@ -18,8 +18,13 @@
 <main class="content">
   <!-- rest of your page… -->
 <h1>HOME</h1>
-<img align="center" src="logo.png">
-
+<a href="flashcards.html"><img align="center" src="logo.png"></a>
+<script>
+  // after 5 000ms (5 sec), send the user to flashcards.html
+  setTimeout(() => {
+    window.location.href = 'flashcards.html';
+  }, 5000);
+</script>
 </main>
 
   
