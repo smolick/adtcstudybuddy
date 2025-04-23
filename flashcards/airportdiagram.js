@@ -22,7 +22,7 @@ back: `Runway end elevation`
 back: `Displaced threshold`
 },
 	{ front : `<img src="img/airport-diagram8.jpg" alt="Airport Diagram"><p>What is number 8?</p>`, 
-back: `Stopping point (LAHSO - <b>L</b>and and <b>H</b>old <b>S</b>hort <b>O</b>perations)`
+back: `Stopping point<br>(LAHSO - <b>L</b>and and <b>H</b>old <b>S</b>hort <b>O</b>perations)`
 },
 	{ front : `<img src="img/airport-diagram9.jpg" alt="Airport Diagram"><p>What is number 9?</p>`, 
 back: `Hot Spot`

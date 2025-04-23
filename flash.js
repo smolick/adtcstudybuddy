@@ -1,4 +1,3 @@
-// flash.js
 (async () => {
   if (document.readyState === 'loading') {
     await new Promise(r => document.addEventListener('DOMContentLoaded', r));
@@ -8,16 +7,16 @@
     needtoknow:		        	"100% Need to Know!",
     acronyms:		       		"Acronyms",
     fars:						"FARs",
-    test:						"Test",
-    test2:						"Test2",
     airportminimums:			"Airport Minimums",
     cfrparts:					"14 CFR Parts",
     acperformance:				"B737-800 Performance",
     b738specslimits:			"B737-800 Specs/Limits",
     wxproductsnoimages:			"WX Products (No Images)",
-	airportdiagram:				"Airport Diagram",
-	weatherrelatedconditions:	"WX Related Conditions",
-	theatmosphere:				"The Atmosphere",
+    airportdiagram:				"Airport Diagram",
+    weatherrelatedconditions:	"WX Related Conditions",
+    theatmosphere:				"The Atmosphere",
+	envoytest2024:				"Airline Test 2024",
+	tafalternates:				"Do I Need an Alternate?",
   };
   const categoryNames = Object.keys(prettyNames);
 
@@ -42,55 +41,79 @@
     return arr;
   }
 
-function showCard() {
-  if (!flashcards.length) return;
-  const { front, back, marker } = flashcards[currentIndex];
-  const side = flipped ? back : front;
-  const container = document.getElementById('cardContent');
-  container.innerHTML = side;
-  container.querySelectorAll('.marker')?.forEach(el => el.remove());
+  function showCard() {
+    if (!flashcards.length) return;
+    const { front, back, marker, category } = flashcards[currentIndex];
+    const side = flipped ? back : front;
+    const container = document.getElementById('cardContent');
+    const checkedCount = Array.from(
+      document.querySelectorAll('.category-section input[type="checkbox"]')
+    ).filter(cb => cb.checked).length;
+    let html = '';
+    if ((document.getElementById('check-all').checked || checkedCount > 1) && category) {
+      html += `<div class="card-category">${prettyNames[category]}</div>`;
+    }
+    html += side;
+    container.innerHTML = html;
+    container.querySelectorAll('.marker')?.forEach(el => el.remove());
 
-if (!flipped && marker) {
-  const m = document.createElement('div');
-  m.className   = 'marker';
-  m.textContent = marker.id;
-  m.style.top   = marker.top;
-  m.style.left  = marker.left;
-  container.appendChild(m);
-}
+    if (!flipped && marker) {
+      const m = document.createElement('div');
+      m.className   = 'marker';
+      m.textContent = marker.id;
+      m.style.top   = marker.top;
+      m.style.left  = marker.left;
+      container.appendChild(m);
+    }
 
-  document.getElementById('flashcard').className = `flashcard ${flipped ? 'back' : 'front'}`;
-  document.getElementById('progressIndicator').textContent =
-    `Card ${currentIndex + 1} of ${flashcards.length}`;
+    document.getElementById('flashcard').className =
+      `flashcard ${flipped ? 'back' : 'front'}`;
+    document.getElementById('progressIndicator').textContent =
+      `Card ${currentIndex + 1} of ${flashcards.length}`;
   }
-
 
   function handleClickZone(direction) {
     if (!flashcards.length) return;
     if (direction === 'forward') {
-      flipped ? (currentIndex = (currentIndex + 1) % flashcards.length, flipped = false)
-              : (flipped = true);
+      flipped ? (
+        currentIndex = (currentIndex + 1) % flashcards.length,
+        flipped = false
+      ) : (flipped = true);
     } else {
-      flipped ? (flipped = false)
-              : (currentIndex = (currentIndex - 1 + flashcards.length) % flashcards.length,
-                 flipped = true);
+      flipped ? (flipped = false) : (
+        currentIndex = (currentIndex - 1 + flashcards.length) % flashcards.length,
+        flipped = true
+      );
     }
     showCard();
   }
 
   function startSelectedStudy() {
     const sel = [];
-    if (document.getElementById('check-all').checked) {
-      sel.push(...Object.values(categoryData).flat());
+    const allChecked = document.getElementById('check-all').checked;
+
+    if (allChecked) {
+      categoryNames.forEach(key => {
+        categoryData[key].forEach(card => {
+          sel.push({ ...card, category: key });
+        });
+      });
     } else {
       categoryNames.forEach(key => {
         if (document.getElementById(`check-${key}`).checked) {
-          sel.push(...categoryData[key]);
+          categoryData[key].forEach(card => {
+            sel.push({ ...card, category: key });
+          });
         }
       });
     }
-    if (!sel.length) return alert("Please select at least one category.");
-    flashcards   = shuffle(sel.slice());
+
+    if (!sel.length) {
+      alert("Please select at least one category.");
+      return;
+    }
+
+    flashcards   = shuffle(sel);
     currentIndex = 0;
     flipped      = false;
     document.getElementById('flashcardRow').style.display = 'block';
@@ -119,18 +142,20 @@ if (!flipped && marker) {
   const total = categoryNames.reduce((sum, k) => sum + categoryData[k].length, 0);
   document.getElementById('count-all').textContent = `(${total})`;
   categoryNames.forEach(k => {
-    document.getElementById(`count-${k}`).textContent = `(${categoryData[k].length})`;
+    document.getElementById(`count-${k}`).textContent =
+      `(${categoryData[k].length})`;
   });
 
   section.querySelectorAll('label').forEach(label => {
     const cb = label.querySelector('input[type="checkbox"]');
     label.classList.toggle('selected', cb.checked);
-    cb.addEventListener('change', () => label.classList.toggle('selected', cb.checked));
+    cb.addEventListener('change', () =>
+      label.classList.toggle('selected', cb.checked)
+    );
   });
 
   window.startSelectedStudy = startSelectedStudy;
   window.handleClickZone   = handleClickZone;
-
 
   const flashRow = document.getElementById('flashcardRow');
   const removeBtn = document.createElement('button');
@@ -142,7 +167,7 @@ if (!flipped && marker) {
     if (currentIndex >= flashcards.length) {
       currentIndex = flashcards.length - 1;
     }
-flipped = false;
+    flipped = false;
     if (flashcards.length === 0) {
       alert('All cards removed! No cards left.');
       flashRow.style.display = 'none';
@@ -154,3 +179,7 @@ flipped = false;
   prog.insertAdjacentElement('afterend', removeBtn);
 
 })();
+window.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') handleClickZone('forward');
+  if (e.key === 'ArrowLeft')  handleClickZone('backward');
+});

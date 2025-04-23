@@ -5,33 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <title>Flashcards - Study</title>
+  <title>Home - Redirecting</title>
   <link rel="stylesheet" href="flash.css">
 </head>
 <body>
-<!-- HEADER -->
-<!-- Load Header JS -->
  <script type="module">
     import { loadHeader } from './js/header.js';
     loadHeader().catch(console.error);
   </script>
 <main class="content">
-  <!-- rest of your page… -->
 <h1>HOME</h1>
 <a href="flashcards.html"><img align="center" src="logo.png"></a>
 <script>
-  // after 5 000ms (5 sec), send the user to flashcards.html
   setTimeout(() => {
     window.location.href = 'flashcards.html';
   }, 5000);
 </script>
 </main>
-
-  
-  <!-- Load your master JS as a module -->
   <script type="module" src="flash.js"></script>
-  
-  <!-- Load footer dynamically -->
   <script type="module">
     import { loadFooter } from './js/footer.js';
     loadFooter().catch(console.error);
