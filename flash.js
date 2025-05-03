@@ -1,10 +1,10 @@
 (async () => {
-  if (document.readyState === 'loading') {
-    await new Promise(r => document.addEventListener('DOMContentLoaded', r));
+	if (document.readyState === 'loading') {
+		await new Promise(r => document.addEventListener('DOMContentLoaded', r));
   }
 
-  const prettyNames = {
-    needtoknow:		        	"100% Need to Know!",
+const prettyNames = {
+	needtoknow:		        	"100% Need to Know!",
     acronyms:		       		"Acronyms",
     fars:						"FARs",
     airportminimums:			"Airport Minimums",
@@ -12,90 +12,82 @@
     acperformance:				"B737-800 Performance",
     b738specslimits:			"B737-800 Specs/Limits",
     wxproductsnoimages:			"WX Products (No Images)",
-    airportdiagram:				"Airport Diagram",
+    airportdiagram:				"Airport Diagram (Image)",
     weatherrelatedconditions:	"WX Related Conditions",
     theatmosphere:				"The Atmosphere",
 	envoytest2024:				"Airline Test 2024",
 	tafalternates:				"Do I Need an Alternate?",
+	ilslocapproach:				"ILS or LOC Approach (Image)"
   };
-  const categoryNames = Object.keys(prettyNames);
-
-  const categoryData = {};
-  await Promise.all(categoryNames.map(async key => {
-    try {
-      const m = await import(`./flashcards/${key}.js`);
-      categoryData[key] = m[key] ?? m.default ?? [];
+const categoryNames = Object.keys(prettyNames);
+const categoryData = {};
+await Promise.all(categoryNames.map(async key => {
+	try {
+		const m = await import(`./flashcards/${key}.js`);
+		categoryData[key] = m[key] ?? m.default ?? [];
     } catch {
-      console.error(`Failed to load "${key}"`);
-      categoryData[key] = [];
+		console.error(`Failed to load "${key}"`);
+		categoryData[key] = [];
     }
   }));
-
   let flashcards = [], currentIndex = 0, flipped = false;
-
-  function shuffle(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
+	function shuffle(arr) {
+		for (let i = arr.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;
   }
-
-  function showCard() {
-    if (!flashcards.length) return;
-    const { front, back, marker, category } = flashcards[currentIndex];
-    const side = flipped ? back : front;
-    const container = document.getElementById('cardContent');
-    const checkedCount = Array.from(
-      document.querySelectorAll('.category-section input[type="checkbox"]')
+function showCard() {
+	if (!flashcards.length) return;
+		const { front, back, marker, category } = flashcards[currentIndex];
+		const side = flipped ? back : front;
+		const container = document.getElementById('cardContent');
+		const checkedCount = Array.from(
+			document.querySelectorAll('.category-section input[type="checkbox"]')
     ).filter(cb => cb.checked).length;
     let html = '';
-    if ((document.getElementById('check-all').checked || checkedCount > 1) && category) {
-      html += `<div class="card-category">${prettyNames[category]}</div>`;
+		if ((document.getElementById('check-all').checked || checkedCount > 1) && category) {
+			html += `<div class="card-category">${prettyNames[category]}</div>`;
     }
-    html += side;
-    container.innerHTML = html;
-    container.querySelectorAll('.marker')?.forEach(el => el.remove());
-
+html += side;
+container.innerHTML = html;
+container.querySelectorAll('.marker')?.forEach(el => el.remove());
     if (!flipped && marker) {
-      const m = document.createElement('div');
-      m.className   = 'marker';
-      m.textContent = marker.id;
-      m.style.top   = marker.top;
-      m.style.left  = marker.left;
-      container.appendChild(m);
+		const m = document.createElement('div');
+		m.className   = 'marker';
+		m.textContent = marker.id;
+		m.style.top   = marker.top;
+		m.style.left  = marker.left;
+		container.appendChild(m);
     }
-
     document.getElementById('flashcard').className =
-      `flashcard ${flipped ? 'back' : 'front'}`;
+		`flashcard ${flipped ? 'back' : 'front'}`;
     document.getElementById('progressIndicator').textContent =
-      `Card ${currentIndex + 1} of ${flashcards.length}`;
+		`Card ${currentIndex + 1} of ${flashcards.length}`;
   }
-
-  function handleClickZone(direction) {
+function handleClickZone(direction) {
     if (!flashcards.length) return;
     if (direction === 'forward') {
-      flipped ? (
-        currentIndex = (currentIndex + 1) % flashcards.length,
-        flipped = false
+		flipped ? (
+			currentIndex = (currentIndex + 1) % flashcards.length,
+			flipped = false
       ) : (flipped = true);
     } else {
-      flipped ? (flipped = false) : (
-        currentIndex = (currentIndex - 1 + flashcards.length) % flashcards.length,
-        flipped = true
+		flipped ? (flipped = false) : (
+			currentIndex = (currentIndex - 1 + flashcards.length) % flashcards.length,
+			flipped = true
       );
     }
     showCard();
   }
-
-  function startSelectedStudy() {
+function startSelectedStudy() {
     const sel = [];
     const allChecked = document.getElementById('check-all').checked;
-
     if (allChecked) {
-      categoryNames.forEach(key => {
-        categoryData[key].forEach(card => {
-          sel.push({ ...card, category: key });
+		categoryNames.forEach(key => {
+		categoryData[key].forEach(card => {
+        sel.push({ ...card, category: key });
         });
       });
     } else {
