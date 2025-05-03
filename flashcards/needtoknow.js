@@ -7,7 +7,7 @@ export const needtoknow = [
 	{ front : "What 3 documents are required to be onboard a flight before it can legally depart?", back: "<ul><li>Dispatch Release</li><li>Load Manifest</li><li>Flight Plan</li></ul>" },
 	{ front : "When is a Drift-down Alternate required?", back: "When you can no longer maintain Method 1, so you revert to Method 2" },
 	{ front : "What is Method 1?", back: "At the point of engine failure, you drift down and maintain 1000’ clearance over critical obstacles<br>(Mostly Mountain Peaks)" },
-	{ front : "What is Method 2?", back: "At the point of engine failure, you drift down clearing a critical obstacle by 1000’ and drift down into a valley requiring a drift down alternate" },
+	{ front : "What is Method 2?", back: "At the point of engine failure, you drift down clearing a critical obstacle by 2000’ and drift down into a valley requiring a drift down alternate" },
 	{ front : "What are the 4 types of airports that can be found in an airlines Ops Spec?", back: "<b>R</b>egular, <b>R</b>efueling, <b>A</b>lternate, <b>P</b>rovisional<br><b>(RRAP)</b>" },
 	{ front : "When converting from <b>MAGNETIC</b> to <b>TRUE</b>, do you add or subtract an <b>EAST</b> variation?", back: "Add" },
 	{ front : "When converting from <b>MAGNETIC</b> to <b>TRUE</b>, do you add or subtract an <b>WEST</b> variation?", back: "Subtract" },

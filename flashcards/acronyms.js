@@ -95,7 +95,7 @@ export const acronyms = [
   { front: "MEL", back: "<b>M</b>inimum <b>E</b>quipment <b>L</b>ist" },
   { front: "METAR", back: "<b>M</b><b>e</b><b>t</b>eorological <b>A</b>erodrome <b>R</b>eport" },
   { front: "Drift Down: <b>Method 1", back: "At the point of engine failure, you drift down and maintain 1000’ clearance over critical obstacles<br>(Mostly Mountain Peaks)" },
-  { front: "Drift Down: <b>Method 2", back: "At the point of engine failure, you drift down clearing a critical obstacle by 1000’ and drift down into a valley requiring a drift down alternate" },
+  { front: "Drift Down: <b>Method 2", back: "At the point of engine failure, you drift down clearing a critical obstacle by 2000’ and drift down into a valley requiring a drift down alternate" },
   { front: "MLGW", back: "<b>M</b>aximum <b>L</b>anding <b>G</b>ross <b>W</b>eight" },
   { front: "MOA", back: "<b>M</b>ilitary <b>O</b>peration <b>A</b>rea" },
   { front: "MOCA", back: "<b>M</b>inimum <b>O</b>bstacle <b>C</b>learance<br>(1000’)" },
