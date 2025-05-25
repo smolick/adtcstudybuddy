@@ -17,7 +17,7 @@ const prettyNames = {
 	theatmosphere:				"The Atmosphere",
 	envoytest2024:				"Airline Test 2024",
 	tafalternates:				"Do I Need an Alternate?",
-	ilslocapproach:				"ILS or LOC Approach (Image)",
+	ilslocapproach:				"ILS or LOC Approach Plate",
 	atc:					"ATC",
 	airspace:				"Airspaces",
 	flightlevels:				"Flight Levels"
