@@ -12,12 +12,7 @@ export const airspace = [
       { front : `What flight levels is RVSM airspace?`, back: `FL290 to FL410.` },
       { front : `Can you enter a MOA on a VFR flight plan?`, back: `Yes` },
       { front : `What is a MOA? How does it work?`, back: `A Military Operations Area. It's an airspace designated to separate military activities from IFR traffic, and to inform VFR traffic where these activities are being conducted` },
-      { front : `What equipment is required to fly in RVSM airspace?`, back: `<ul><li>2RAC</li>
-<li>Transponder with altitude-encoding (mode-c)</li>
-<li>2 independent altimeters</li>
-<li>1 altitude reporting system</li>
-<li>1 altitude alerting sstem</li>
-<li>1 automatic altitude control system (ex; autopilot</li></ul>` },
+      { front : `What equipment is required to fly in RVSM airspace?`, back: "<ul><li>2RAC</li><li>Transponder with altitude-encoding (mode-c)</li><li>2 independent altimeters</li><li>1 altitude reporting system</li><li>1 altitude alerting system</li><li>1 automatic altitude control system (ex; autopilot</li></ul>" },
       { front : `What is Class E airspace?`, back: `Any controlled airspace within the United States that is not Class A, B, C, or D` },
       { front : `What is required for an aircraft to enter Class C?`, back: `A transponder with mode-c and two-way radio communications` },
       { front : `What is the height of Class D?`, back: `2500' AGL` },
