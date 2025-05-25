@@ -5,19 +5,23 @@
 
 const prettyNames = {
 	needtoknow:		        	"100% Need to Know!",
-    acronyms:		       		"Acronyms",
-    fars:						"FARs",
-    airportminimums:			"Airport Minimums",
-    cfrparts:					"14 CFR Parts",
-    acperformance:				"B737-800 Performance",
-    b738specslimits:			"B737-800 Specs/Limits",
-    wxproductsnoimages:			"WX Products (No Images)",
-    airportdiagram:				"Airport Diagram (Image)",
-    weatherrelatedconditions:	"WX Related Conditions",
-    theatmosphere:				"The Atmosphere",
+	acronyms:		       		"Acronyms",
+	fars:					"FARs",
+	airportminimums:			"Airport Minimums",
+	cfrparts:				"14 CFR Parts",
+	acperformance:				"B737-800 Performance",
+	b738specslimits:			"B737-800 Specs/Limits",
+	wxproductsnoimages:			"WX Products (No Images)",
+	airportdiagram:				"Airport Diagram (Image)",
+	weatherrelatedconditions:		"WX Related Conditions",
+	theatmosphere:				"The Atmosphere",
 	envoytest2024:				"Airline Test 2024",
 	tafalternates:				"Do I Need an Alternate?",
 	ilslocapproach:				"ILS or LOC Approach (Image)"
+	atc:					"ATC"
+	airspace:				"Airspaces"
+	flightlevels:				"Flight Levels"
+	
   };
 const categoryNames = Object.keys(prettyNames);
 const categoryData = {};
