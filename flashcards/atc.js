@@ -27,7 +27,7 @@ UHF: 243` },
       { front : `How long after ETD does ATC clearance expire?`, back: `2 Hours` },
       { front : `How long before ETD does ATC provide clearance for departure?`, back: `10 Minutes` },
       { front : `How does ATC identify a specific aircraft via its transponder?`, back: `By issuing a four-digit "squawk" code unique to that aircraft, to which the pilot(s) set their transponder(s)` },
-      { front : `Are westbound flights planned to cruise at odd- or even-numbered flight levels?`, back: `Even-numbered` },
+      { front : `Are westbound flights planned to cruise at odd or even-numbered flight levels?`, back: `Even numbered` },
       { front : `What is a LAHSO?`, back: `<b>L</b>and <b>A</b>nd <b>H</b>old <b>S</b>hort <b>O</b>perations` },
       { front : `How does LAHSO work?`, back: `A point in which an aircraft landing must come to a complete stop (during specific hours), generally before the intersection of 2 runways` },
 ];
