@@ -16,13 +16,13 @@ export const atc = [
       { front : `What does ASDE provide ATC?`, back: `The ability to track an aircraft on the ground via the aircrafts transponder` },
       { front : `What does secondary radar provide to ATC?`, back: `Transponder information, ex; position, altitude, and call sign` },
       { front : `Is an average heading of 360° considered eastbound or westbound?`, back: `Eastbound` },
-      { front : `What are the 3 non-discreet transponder codes?`, back: `<ul><li>7500 - Hijacking</li>
+      { front : `What are the 3 non-discreet transponder codes?`, back: `<p><ul><li>7500 - Hijacking</li>
 <li>7600 - Loss of radio communications</li>
-<li>7700 - All other emergencies</li></ul>` },
+<li>7700 - All other emergencies</li></ul></p>` },
       { front : `What does the Tower controller provide to the flight crew?`, back: `Takeoff and landing clearance` },
       { front : `What are the requirements when crossing and ADIZ over water?`, back: `To cross within 5 minutes and 20 NM of where you planned/stated your intention to cross` },
-      { front : `What are the universal emergency radio frequencies?`, back: `VHF: 121.5<br>
-UHF: 243` },
+      { front : `What are the universal emergency radio frequencies?`, back: `<p>VHF: 121.5<br>
+UHF: 243</p>` },
       { front : `What is an ADIZ? What does it provide?`, back: `<b>A</b>ir <b>D</b>efense <b>I</b>dentificaition <b>Z</b>one. It's an airspace over land or water, within which the identification, location, and control of civil aircraft is performed in the interest of national security` },
       { front : `How long after ETD does ATC clearance expire?`, back: `2 Hours` },
       { front : `How long before ETD does ATC provide clearance for departure?`, back: `10 Minutes` },
