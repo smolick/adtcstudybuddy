@@ -16,9 +16,7 @@ export const atc = [
       { front : `What does ASDE provide ATC?`, back: `The ability to track an aircraft on the ground via the aircrafts transponder` },
       { front : `What does secondary radar provide to ATC?`, back: `Transponder information, ex; position, altitude, and call sign` },
       { front : `Is an average heading of 360° considered eastbound or westbound?`, back: `Eastbound` },
-      { front : `What are the 3 non-discreet transponder codes?`, back: `<p><ul><li>7500 - Hijacking</li>
-<li>7600 - Loss of radio communications</li>
-<li>7700 - All other emergencies</li></ul></p>` },
+      { front : `What are the 3 non-discreet transponder codes?`, back: "<ul><li>7500 - Hijacking</li><li>7600 - Loss of radio communications</li><li>7700 - All other emergencies</li></ul>" },
       { front : `What does the Tower controller provide to the flight crew?`, back: `Takeoff and landing clearance` },
       { front : `What are the requirements when crossing and ADIZ over water?`, back: `To cross within 5 minutes and 20 NM of where you planned/stated your intention to cross` },
       { front : `What are the universal emergency radio frequencies?`, back: `<p>VHF: 121.5<br>
