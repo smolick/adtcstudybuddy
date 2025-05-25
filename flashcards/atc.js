@@ -23,7 +23,7 @@ export const atc = [
       { front : `What are the requirements when crossing and ADIZ over water?`, back: `To cross within 5 minutes and 20 NM of where you planned/stated your intention to cross` },
       { front : `What are the universal emergency radio frequencies?`, back: `VHF: 121.5<br>
 UHF: 243` },
-      { front : `What is an ADIZ? What does it provide?`, back: `<b>A</b>ir <b>D</b>efense <b>I</b>dentificaition Zone. It's an airspace over land or water, within which the identification, location, and control of civil aircraft is performed in the interest of national security` },
+      { front : `What is an ADIZ? What does it provide?`, back: `<b>A</b>ir <b>D</b>efense <b>I</b>dentificaition <b>Z</b>one. It's an airspace over land or water, within which the identification, location, and control of civil aircraft is performed in the interest of national security` },
       { front : `How long after ETD does ATC clearance expire?`, back: `2 Hours` },
       { front : `How long before ETD does ATC provide clearance for departure?`, back: `10 Minutes` },
       { front : `How does ATC identify a specific aircraft via its transponder?`, back: `By issuing a four-digit "squawk" code unique to that aircraft, to which the pilot(s) set their transponder(s)` },
