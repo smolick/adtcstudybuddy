@@ -198,6 +198,7 @@ body,
 	display: inline-block;
 	max-width: 100%;
 	width: 100%;
+	box-sizing: border-box;
 	margin: 0.5em auto 1em;
 	padding: 1em 1em;
 	font-size: 1em;
