@@ -3,9 +3,9 @@ export const atc = [
       { front : `What is a TMU? Where are they located?`, back: `<b>T</b>raffic <b>M</b>anagement <b>U</b>nit. Located in ARTCCs (and some TRACONs)` },
       { front : `What do TMUs issue?`, back: `They issue ground stops and ground delay programs` },
       { front : `What are the 2 types of radar ATC uses?`, back: `Primary and secondary` },
-      { front : `What does a Clearance Delivery controller provide to a flightcrew?`, back: `<ul><li>Clearance limit (usually the destination)</li>
+      { front : `What does a Clearance Delivery controller provide to a flightcrew?`, back: `<p><ul><li>Clearance limit (usually the destination)</li>
 <li>Route of flight</li>
-<li>Transponder code</li></ul>` },
+<li>Transponder code</li></ul></p>` },
       { front : `What is TRACON?`, back: `<b>T</b>erminal <b>R</b>adar <b>A</b>pproach <b>Con</b>trol` },
       { front : `What does a TRACON provide?`, back: `It provides approach and departure control services for an aircraft entering and exiting terminal areas` },
       { front : `What is TMI?`, back: `<b>T</b>raffic <b>M</b>anagement <b>I</b>nitiatives` },
