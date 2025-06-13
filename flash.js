@@ -20,7 +20,8 @@ const prettyNames = {
 	ilslocapproach:				"ILS or LOC Approach Plate",
 	atc:					"ATC",
 	airspace:				"Airspaces",
-	flightlevels:				"Flight Levels"
+	flightlevels:				"Flight Levels",
+	navigation:				"Navigation"
 	
   };
 const categoryNames = Object.keys(prettyNames);
