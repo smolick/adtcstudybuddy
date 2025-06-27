@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cloud Visualization</title>
+	<link rel="stylesheet" href="flash.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="header-placeholder"></div>
+		<script type="module">
+			import { loadHeader } from './js/header.js';
+			loadHeader().catch(console.error);
+		</script>
+<main class="content">
+	<h1>Cloud Visualization</h1>
+<h3><img src="cloudvisualization.jpg"></h3>
+<p class="box">
+
+</p>
+
+<p class="box">
+TAF KDAL 011120Z 0112/0212 VRB03KT 2SM BR OVC003 TEMPO 0112/0114 1/2SM FG OVC002<br>
+FM011600 15005KT 6SM BR BKN007<br>
+FM011800 19009KT P6SM BKN015<br>
+FM012000 17010KT P6SM SCT035 BKN250
+</p>
+
+<p class="box">
+DAL ATIS INFO J 1404Z. 11003KT 2SM BR OVC005 18/17 A2995 (TWO NINER NINER FIVE). SIMUL ILS, RNAV, RNAV RNP APCHS RWY 13L, RWY 13R IN USE. NOTICE TO AIRMEN. TWY A 3 CLSD, TWY A 4 CLSD. TWY A CLSD BTWN SIGNATURE, TERMINAL 1 AND SIGNATURE, TERMINAL 4. HAZD WX INFO FOR DAL AREA AVBL FM FSF. ILS CRITICAL AREAS IN EFFECT. MRV APPROACHES. ...ADVS YOU HAVE INFO J.<br><br>
+
+DAL 05/004 DAL OBST TOWER LGT (ASR 1043981) 324710.00N0965708.00W (6.3NM SW DAL) 653.2FT (224.1FT AGL) U/S 2505011155-2506151154<br><br>
+
+!DAL 04/184 DAL NAV ILS RWY 31L LOC NOT MNT 2505011400-2505011900<br><br>
+
+!DAL 04/166 DAL OBST TOWER LGT (ASR 1209110) 324644.40N0965523.00W (5.4NM SW DAL) 919.9FT (500.0FT AGL) U/S 2504270318-2506110317<br><br>
+
+!DAL 04/028 DAL OBST TOWER LGT (ASR 1218543) 325144.00N0965255.80W (1.9NM WNW DAL) 579.1FT (144.0FT AGL) U/S 2504041843-2506042359<br><br>
+
+!DAL 02/161 DAL TWY A BTN SIGNATURE T1 RAMP AND TWY A5 WIP OPN EXCAVATION ADJ SOUTH EDGE 2502271649-2506302300<br><br>
+
+!DAL 02/139 DAL APRON CUSTOMS RAMP ENTRANCE CLSD USE SIGNATURE RAMP T4 2502251520-2506302359<br><br>
+
+!DAL 02/137 DAL APRON US CUST AND BORDER PROTECTION RAMP CLSD TO ACFT WINGSPAN MORE THAN 95FT 2502251508-2506302359<br><br>
+
+!DAL 02/136 DAL TWY A BTN SIGNATURE T4 RAMP AND SIGNATURE T1 RAMP CLSD 2502251441-2506302359<br><br>
+
+!DAL 01/311 DAL TWY A4 CLSD 2501301916-2506300500<br><br>
+
+!DAL 01/310 DAL TWY A3 CLSD 2501301913-2506300500<br><br>
+</p>
+
+<p class="box">
+KDFW 011253Z 00000KT 1/2SM R17C/P6000FT BR OVC002 17/16 A2992 RMK AO2 SFC VIS 2 1/2 SLP126 T01670161<br>
+KDFW 011153Z 00000KT 1/2SM R17C/P6000FT BR OVC003 16/16 A2989 RMK AO2 SFC VIS 2 1/2 SLP116 70240 T01610156 10167 20156 53015<br>
+KDFW 011134Z 00000KT 3SM BR OVC002 16/16 A2988 RMK AO2 T01610161<br>
+</p>
+
+<p class="box">
+TAF KDFW 011120Z 0112/0218 VRB03KT 4SM BR OVC003 TEMPO 0112/0114 1SM BR OVC002<br>
+FM011600 15005KT 6SM BR BKN007<br>
+FM011800 19009KT P6SM BKN015<br>
+FM012000 17010KT P6SM SCT035 BKN250
+</p>
+	<ul class="qa-list">
+		<li>
+			<p>
+			<strong>What is the temperature/dew point spread at DAL on the 1153z?</strong>
+			<span class="answer hidden">The spread is 0</span>
+			</p>
+		</li>
+		<li>
+			<p><strong>For a flight landing at 1238z what is the ceiling indicated in the METAR?</strong></p>
+			<p class="answer hidden">Overcast 300'</p>
+		</li>
+		<li>
+			<p><strong>Is an alternate required for an arrival to DAL at 13z?</strong></p>
+			<p class="answer hidden">Yes. The visibility is below 3SM and ceiling is forecast below 2000'</p>
+		</li>
+		<li>
+			<p><strong>What weather conditions can be expected for a flight arriving at 13z?</strong></p>
+			<p class="answer hidden">Variable direction winds up to 3 knots with 2SM visibility, mist, and a ceiling of 300'. Temporary conditions of 1/SM, fog and an overcast ceiling of 200' is possible</p>
+		</li>
+		<li>
+			<p><strong>Which ATIS is currently in effect?</strong></p>
+			<p class="answer hidden">ATIS INFO J (Juliet)</p>
+		</li>
+		<li>
+			<p><strong>What arrival runway(s) are being utilized for DAL?</strong></p>
+			<p class="answer hidden">According to the ATIS at 1404z they are utilizing 13L and 13R</p>
+		</li>
+		<li>
+			<p><strong>What is the reported RVR for runway 13L?</strong></p>
+			<p class="answer hidden">6000 on touchdown and 6000 on rollout</p>
+		</li>
+		<li>
+			<p><strong>What is the visibility reported in the DFW METAR at 1253z?</strong></p>
+			<p class="answer hidden">1/2SM</p>
+		</li>
+		<li>
+			<p><strong>Is the above value tower or surface?</strong></p>
+			<p class="answer hidden">Tower. The surface visibility is reported in the remarks section</p>
+		</li>
+		<li>
+			<p><strong>What is the reported RVR for DFW runway 17C?</strong></p>
+			<p class="answer hidden">Greater than 6000 ft shown in the METAR. And 6000 for TD/MP/RO as shown in the RVR monitor</p>
+		</li>
+		<li>
+			<p><strong>For an arrival to DFW at 13z, what is/are the forecast visibilities?</strong></p>
+			<p class="answer hidden">4SM with a temporary condition of 1sm. Note how the actual doesn't match the forecast. Actual is 1/2SM and forecast shows the lowest as 1SM.</p>
+		</li>
+		<li>
+			<p><strong>Is the NWS expecting the low IFR conditions to improve in the Dallas area?</strong></p>
+			<p class="answer hidden">Yes, the forecast discussion is expecting conditions to gradually improve mid to late morning</p>
+		</li>
+		<li>
+			<p><strong>Does the NWS have low, medium, or high confidence for thunderstorms in the DFW area?</strong></p>
+			<p class="answer hidden">The forecast discussion indicates a low confidence in TS impacting the DFW area</p>
+		</li>
+		<li>
+			<p><strong>Based on an arrival to DAL at 14z, what is the likelihood of diversion? Low, medium, high?</strong></p>
+			<p class="answer hidden">Low. Arrival minimums are equal or greater than chart minimums. An alternate and some level of DISP ADD are appropriate for unexpected worsening of conditions.</p>
+		</li>
+	</ul>
+	<div class="button-group">
+		<button id="toggleAnswers" style="margin-left: 20px;">Show Answers</button>
+	</div>
+</main>
+
+	<script type="module">
+		import { loadFooter } from './js/footer.js';
+		loadFooter().catch(console.error);
+	</script>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+		const items   = document.querySelectorAll('.qa-list li');
+		const btn     = document.getElementById('toggleAnswers');
+		const answers = document.querySelectorAll('.qa-list .answer');
+			items.forEach((li, i) => {
+		const num = document.createElement('span');
+			num.className   = 'qa-number';
+			num.textContent = (i + 1) + '. ';
+			li.prepend(num);
+  });
+	btn.addEventListener('click', () => {
+    const show = answers[0].classList.contains('hidden');
+		answers.forEach(a => a.classList.toggle('hidden', !show));
+		btn.textContent = show ? 'Hide Answers' : 'Show Answers';
+  });
+	items.forEach(li => {
+	const question = li.querySelector('strong');
+		if (!question) return;
+			question.style.cursor = 'pointer';
+			question.addEventListener('click', () => {
+		const ans = li.querySelector('.answer');
+		if (ans) ans.classList.toggle('hidden');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
