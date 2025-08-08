@@ -496,3 +496,41 @@ footer {
 .qa-list li strong {
 	cursor: pointer;
 }
+
+/* --------------------------------------------- */
+/* 9) Questions CSS						         */
+/* --------------------------------------------- */
+.q-list {
+	list-style: none;
+	padding-left: 0;
+}
+.q-list li {
+	position: relative;
+	margin-bottom: 0em;
+	padding-left: 1.5em;
+    font-size: 18px;
+}
+.q-list li::before {
+	position: absolute;
+	left: 0; top: 0;
+	font-weight: bold;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+.q-list li p {
+	display: inline;
+	margin: 0;
+}
+.q-list li .answer {
+	display: inline;
+	margin-left: 0.5em;
+	font-style: italic;
+	color: #7b1500;
+}
+.q-list li .answer.hidden {
+	display: none;
+}
+.q-list li strong {
+	cursor: pointer;
+}
