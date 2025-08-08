@@ -174,29 +174,38 @@ You can either click each question to show/hide the answer OR there is a button 
 		import { loadFooter } from './js/footer.js';
 		loadFooter().catch(console.error);
 	</script>
-	<script>
-		document.addEventListener('DOMContentLoaded', () => {
-		const items   = document.querySelectorAll('.qa-list li');
-		const btn     = document.getElementById('toggleAnswers');
-		const answers = document.querySelectorAll('.qa-list .answer');
-			items.forEach((li, i) => {
-		const num = document.createElement('span');
-			num.className   = 'qa-number';
-			num.textContent = (i + 1) + '. ';
-			li.prepend(num);
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const numberedItems = document.querySelectorAll('.qa-list li');
+  const allToggleItems = document.querySelectorAll('.qa-list li, .qa-list-nonum li, .q-list li');
+  const btn = document.getElementById('toggleAnswers');
+  const answers = document.querySelectorAll('.qa-list .answer, .qa-list-nonum .answer, .q-list .answer');
+
+  // Auto-number only .qa-list
+  numberedItems.forEach((li, i) => {
+    const num = document.createElement('span');
+    num.className = 'qa-number';
+    num.textContent = (i + 1) + '. ';
+    li.prepend(num);
   });
-	btn.addEventListener('click', () => {
-    const show = answers[0].classList.contains('hidden');
-		answers.forEach(a => a.classList.toggle('hidden', !show));
-		btn.textContent = show ? 'Hide Answers' : 'Show Answers';
-  });
-	items.forEach(li => {
-	const question = li.querySelector('strong');
-		if (!question) return;
-			question.style.cursor = 'pointer';
-			question.addEventListener('click', () => {
-		const ans = li.querySelector('.answer');
-		if (ans) ans.classList.toggle('hidden');
+
+  // Toggle all answers with the button
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const show = answers[0]?.classList.contains('hidden');
+      answers.forEach(a => a.classList.toggle('hidden', !show));
+      btn.textContent = show ? 'Hide Answers' : 'Show Answers';
+    });
+  }
+
+  // Toggle each answer when clicking the question
+  allToggleItems.forEach(li => {
+    const question = li.querySelector('strong');
+    if (!question) return;
+    question.style.cursor = 'pointer';
+    question.addEventListener('click', () => {
+      const ans = li.querySelector('.answer');
+      if (ans) ans.classList.toggle('hidden');
     });
   });
 });
