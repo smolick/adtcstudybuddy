@@ -50,12 +50,17 @@ You can either click each question to show/hide the answer OR there is a button 
 	This is broken down into four different parts, AC Type/ Wake Cat-Equipement & Capability.<br>
 	-B737/M - This will be a Boeing 737-700 with a Medium turbulance wake category.<br>
 	-SADE2E3GIJ4RWZ - This string will be the equipement on the aircraft.<br>
-	<ul>
+	<ul class="q-list">
 		<li>S - Standard equiped with VOR, VHF, ILS</li>
 		<li>A - GBAS - Ground Based Augmentation System Landing System</li>
 		<li>D - DME</li>
 		<li>E2 - ACARS D-FIS - Aircraft Communication Addressing and Reporting System (ACARS) Data link (D)-Flight Information Services (FIS)</li>
-		<li>E3 - ACARS PDC - Aircraft Communication Addressing and Reporting System (ACARS) Pre-Departure Clearance (PDC)</li>
+		<li>
+			<p>
+			<strong>E3 - ACARS PDC</strong>
+			<span class="answer hidden">Aircraft Communication Addressing and Reporting System (ACARS) Pre-Departure Clearance (PDC)</span>
+			</p>
+		</li>
 		<li>G - GNSS</li>
 		<li>I - INS</li>
 		<li>J4 - VDL Mode 2 - VHF data link (VDL)</li>
@@ -71,6 +76,9 @@ You can either click each question to show/hide the answer OR there is a button 
 			</p>
 		</li>
 	</ul>
+		<div class="button-group">
+		<button class="toggle-answers">Show Answers</button>
+	</div>
 	<br>
 	/LB1D1 - Transponder/ADS-B/ADS-C
 	<ul>
@@ -166,7 +174,7 @@ You can either click each question to show/hide the answer OR there is a button 
 		</li>
 	</ul>
 	<div class="button-group">
-		<button id="toggleAnswers" style="margin-left: 20px;">Show Answers</button>
+		<button class="toggle-answers">Show Answers</button>
 	</div>
 </main>
 <div id="footer-placeholder"></div>
@@ -176,30 +184,31 @@ You can either click each question to show/hide the answer OR there is a button 
 	</script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const numberedItems = document.querySelectorAll('.qa-list li');
-  const allToggleItems = document.querySelectorAll('.qa-list li, .qa-list-nonum li, .q-list li');
-  const btn = document.getElementById('toggleAnswers');
-  const answers = document.querySelectorAll('.qa-list .answer, .qa-list-nonum .answer, .q-list .answer');
-
   // Auto-number only .qa-list
-  numberedItems.forEach((li, i) => {
+  document.querySelectorAll('.qa-list li').forEach((li, i) => {
     const num = document.createElement('span');
     num.className = 'qa-number';
     num.textContent = (i + 1) + '. ';
     li.prepend(num);
   });
 
-  // Toggle all answers with the button
-  if (btn) {
-    btn.addEventListener('click', () => {
-      const show = answers[0]?.classList.contains('hidden');
-      answers.forEach(a => a.classList.toggle('hidden', !show));
-      btn.textContent = show ? 'Hide Answers' : 'Show Answers';
-    });
-  }
+  // Handle all toggle buttons independently
+  document.querySelectorAll('.toggle-answers').forEach(button => {
+    button.addEventListener('click', () => {
+      const container = button.closest('.qa-section');
+      if (!container) return;
 
-  // Toggle each answer when clicking the question
-  allToggleItems.forEach(li => {
+      const answers = container.querySelectorAll('.answer');
+      if (answers.length === 0) return;
+
+      const show = answers[0].classList.contains('hidden');
+      answers.forEach(a => a.classList.toggle('hidden', !show));
+      button.textContent = show ? 'Hide Answers' : 'Show Answers';
+    });
+  });
+
+  // Click to toggle single answers (for all list types)
+  document.querySelectorAll('.qa-list li, .qa-list-nonum li, .q-list li').forEach(li => {
     const question = li.querySelector('strong');
     if (!question) return;
     question.style.cursor = 'pointer';
@@ -210,6 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+
 
 
 </body>
