@@ -7,6 +7,9 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <title>Home - Redirecting</title>
   <link rel="stylesheet" href="flash.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
  <script type="module">
@@ -15,7 +18,26 @@
   </script>
 <main class="content">
 <h1>HOME</h1>
-<a href="flashcards.html"><img align="center" src="logo.png"></a>
+<div class="hero-section">
+  <a href="flashcards.html" class="logo-link">
+    <img align="center" src="logo.png" class="hero-logo">
+  </a>
+  <p class="hero-description">Master aircraft dispatcher knowledge with interactive flashcards and comprehensive study materials</p>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <span class="stat-number">500+</span>
+      <span class="stat-label">Flashcards</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">15+</span>
+      <span class="stat-label">Categories</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">100%</span>
+      <span class="stat-label">Free</span>
+    </div>
+  </div>
+</div>
 <script>
   setTimeout(() => {
     window.location.href = 'flashcards.html';
