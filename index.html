@@ -5,24 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <title>Home - Redirecting</title>
+  <title>ADTC Study Buddy</title>
   <link rel="stylesheet" href="flash.css">
 </head>
 <body>
- <script type="module">
+  <script type="module">
     import { loadHeader } from './js/header.js';
     loadHeader().catch(console.error);
   </script>
-<main class="content">
-<h1>HOME</h1>
-<a href="flashcards.html"><img align="center" src="logo.png"></a>
+<div class="open-layout" style="text-align:center; padding-top:60px;">
+  <h1 class="page-title">ADTC Study Buddy</h1>
+  <p class="page-subtitle">Aircraft Dispatcher Training — Flashcards, Notes & Study Guides</p>
+  <a href="flashcards.html"><img src="logo.png" style="max-width:320px; margin:2rem auto; border-radius:12px;" alt="ADTC Study Buddy"></a>
+  <p style="color:var(--text-dim); font-size:13px; margin-top:1rem;">Redirecting to Flashcards...</p>
+</div>
 <script>
   setTimeout(() => {
     window.location.href = 'flashcards.html';
   }, 5000);
 </script>
-</main>
-  <script type="module" src="flash.js"></script>
+  <div id="footer-placeholder"></div>
   <script type="module">
     import { loadFooter } from './js/footer.js';
     loadFooter().catch(console.error);

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Need To Know</title>
+  <title>100% Need to Know — ADTC Study Buddy</title>
   <link rel="stylesheet" href="flash.css">
 </head>
 <body>
@@ -12,144 +12,242 @@
     loadHeader().catch(console.error);
   </script>
 
-  <main class="content">
-    <h1>NEED TO KNOW</h1>
-<div class="box">
-      <h2>Title 14: Aeronautics &amp; Specs</h2>
-      <strong>CFR</strong> - Code of Federal Regulations
-      <h3>Chapter 1: Federal Aviation Administration</h3>
-      <strong>FAR</strong> - Federal Aviation Regulations
-      <h4>Parts - NEED TO KNOW</h4>
-      <ul>
-        <li><b>Part 1</b>: Definitions &amp; Abbreviations</li>
-        <li><b>Part 61</b>: Certification of Pilots</li>
-        <li><b>Part 63</b>: Certification of Flight Crew other than Pilots</li>
-        <li><b>Part 65</b>: Certification of Non-Pilot Flight Crew</li>
-        <li><b>Part 71</b>: Classification of Airspace</li>
-        <li><b>Part 91</b>: General Aviation (No to little money/private)</li>
-        <li><b>Part 121</b>: Air Carrier Operations</li>
-        <li><b>Part 135</b>: Commuter Operations (Up to 29 PAX)</li>
-        <li><b>Part 139</b>: Certification of Airports (Building an airport)</li>
-      </ul>
+<div class="open-layout">
+
+  <!-- Page header -->
+  <div class="ntk-page-header">
+    <h1><span class="hl">100%</span> Need to Know</h1>
+    <p>Critical knowledge for the ADX exam and dispatch operations.</p>
+  </div>
+
+  <!-- Search -->
+  <div class="ntk-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <input type="text" placeholder="Search all topics..." id="ntkSearch">
+  </div>
+
+  <!-- Section 1: CFR Parts -->
+  <div class="accordion-section open">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar blue"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Title 14: Aeronautics & Specs</div>
+        <div class="accordion-meta">CFR · FAR · Need to Know Parts</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">CFR</div>
+          <div class="ntk-item-a"><strong>Code of Federal Regulations</strong></div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Chapter 1: Federal Aviation Administration</div>
+          <div class="ntk-item-a"><strong>FAR</strong> — Federal Aviation Regulations</div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Parts — Need to Know</div>
+          <div class="ntk-item-a">
+            <strong>Part 1</strong>: Definitions & Abbreviations<br>
+            <strong>Part 61</strong>: Certification of Pilots<br>
+            <strong>Part 63</strong>: Certification of Flight Crew other than Pilots<br>
+            <strong>Part 65</strong>: Certification of Non-Pilot Flight Crew<br>
+            <strong>Part 71</strong>: Classification of Airspace<br>
+            <strong>Part 91</strong>: General Aviation (No to little money/private)<br>
+            <strong>Part 121</strong>: Air Carrier Operations<br>
+            <strong>Part 135</strong>: Commuter Operations (Up to 29 PAX)<br>
+            <strong>Part 139</strong>: Certification of Airports (Building an airport)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Line of Authority -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar green"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Line of Authority</div>
+        <div class="accordion-meta">Ops Spec · FAA Approval</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">Ops Spec process</div>
+          <div class="ntk-item-a">
+            1. Ops Spec is created by an airline<br>
+            2. Draft of Ops Spec is given to FAA<br>
+            3. FAA reads airline's Ops Spec<br>
+            4. FAA approves airline's Ops Spec
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: Operation Certificate -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar amber"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Operation Certificate & Joint Responsibility</div>
+        <div class="accordion-meta">FAR 121.533 · Operational Control</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">Operational Control</div>
+          <div class="ntk-item-a">Exercising the authority to <strong>Initiate</strong>, <strong>Conduct</strong>, or <strong>Terminate</strong> flights.</div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Joint Responsibility — Initiate (PIC & Dispatch)</div>
+          <div class="ntk-item-a">
+            Preflight Planning<br>
+            Delay<br>
+            Dispatch Release
+          </div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Pilot in Command — Conduct</div>
+          <div class="ntk-item-a">
+            Safety of Passengers<br>
+            Cargo<br>
+            Crew<br>
+            Aircraft
+          </div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Dispatch — Conduct</div>
+          <div class="ntk-item-a">
+            Monitor Flight Progress<br>
+            Issue Safety Information<br>
+            Cancel or Redispatch
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4: Duty Times -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar red"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Duty Times</div>
+        <div class="accordion-meta">FAR 121.465 · Dispatcher & Pilot</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">Dispatcher Duty Times <code>FAR 121.465</code></div>
+          <div class="ntk-item-a">
+            <strong>10 hours</strong> scheduled/shift<br>
+            <strong>8 hours</strong> rest between shifts<br>
+            <strong>1 day off</strong> per week (24 hours every 7 days)<br>
+            5 hours of jumpseating per year +1 hour per landing (up to half of requirement)
+          </div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Pilot Duty Times</div>
+          <div class="ntk-item-a">
+            <strong>190</strong> flight duty period per 672 hours<br>
+            <strong>14</strong> max hours in short-call reserve<br>
+            <strong>2 hours</strong> flight duty period can be extended due to unforeseen circumstances (on the ground) — in the air, as long as it takes
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 5: Fatigue Rules -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar purple"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Fatigue Rules</div>
+        <div class="accordion-meta">Chronic vs Acute Fatigue</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">Chronic Fatigue</div>
+          <div class="ntk-item-a">Not enough rest day after day. Solution: <strong>Several nights of extended rest</strong></div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Acute Fatigue</div>
+          <div class="ntk-item-a">Not enough rest over one night. Solution: <strong>One night of extended rest</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 6: Three Required Documents -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar teal"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Three Required Documents</div>
+        <div class="accordion-meta">FAR 121.695 · Dispatch Release · Load Manifest · Flight Plan</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">Dispatch Release — FATWIVES</div>
+          <div class="ntk-item-a">
+            <strong>F</strong>uel (Minimum Supply)<br>
+            <strong>A</strong>irports<br>
+            <strong>T</strong>rip or Tail #<br>
+            <strong>W</strong>eather Package<br>
+            <strong>I</strong>FR (Instrument Flight Rules)<br>
+            <strong>V</strong>FR (Visual Flight Rules)<br>
+            <strong>E</strong>TOPS/ETP<br>
+            <strong>S</strong>ignatures (PIC & DX)
+          </div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Load Manifest</div>
+          <div class="ntk-item-a">
+            AC Weight<br>
+            Fuel<br>
+            Cargo<br>
+            Crewmembers<br>
+            Passengers
+          </div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Flight Plan</div>
+          <div class="ntk-item-a">Route of flight: e.g., <code>KSAN.SID.DCT.WAYPT.DCT.STAR.KDAL</code></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
-<br>
-    <div class="box">
-      <h2>Line of Authority</h2>
-      <ul>
-        <li>Ops Spec is created by an airline</li>
-        <li>Draft of Ops Spec is given to FAA</li>
-        <li>FAA reads airline's Ops Spec</li>
-        <li>FAA approves airline's Ops Spec</li>
-      </ul>
-    </div>
-<br>
-    <div class="box">
-      <h2>Operation Certificate</h2>
-      <ul>
-        <li>Certificate Holder (Airline)</li>
-        <li>Director of Operations</li>
-        <li>Operational Control:
-			<ul>
-			<li>Exercising the authority to <b>Initiate</b>, <b>Conduct</b>, or <b>Terminate</b> flights</li>
-			</ul>
-		</li>
-        <li>Joint/Sole Responsibility (FAR 121.533)
-          <ul>
-            <li><b>Pilot in Command &amp; Dispatch - Initiate</b></li>
-           <ul>
-		   <li>Preflight Planning</li>
-            <li>Delay</li>
-            <li>Dispatch Release</li>
-			</ul>
-		   </ul>
-		   <ul>
-            <li><b>Pilot in Command - Conduct</b>:</li>
-			<ul>
-			<li>Safety of Passengers</li>
-			<li>Cargo</li>
-			<li>Crew</li>
-			<li>Aircraft</li>
-			</ul>
-			</ul>
-			<ul>
-            <li><b>Dispatch - Conduct</b>: </li>
-			<ul>
-			<li>Monitor Flight Progress</li>
-			<li>Issue Safety Information</li>
-			<li>Cancel or Redispatch</li>
-			</ul>
-			</ul>
-          </ul>
-        </li>
-    </div>
-<br>
-    <div class="box">
-      <h2>Duty Times</h2>
-      <h3>Dispatcher Duty Times (FAR 121.465)</h3>
-      <ul>
-        <li>10 hours scheduled/shift</li>
-        <li>8 hours rest between shifts</li>
-        <li>1 day off per week (24 hours every 7 days)</li>
-        <li>5 hours of jumpseating per year +1 hour per landing (up to half of requirement)</li>
-      </ul>
-      <h3>Pilot Duty Times</h3>
-      <ul>
-        <li>190 Flight duty period per 672 hours</li>
-		<li>14 Max hours in short-call reserve</li>
-		<li>2 Hours flight duty period can be extended due to unforeseen circumstances (on the ground) (in the air, as long as it takes)</li>
-      </ul>
-    </div>
-<br>
-    <div class="box">
-      <h2>Fatigue Rules</h2>
-      <ul>
-        <li><strong>Chronic Fatigue</strong>: Not enough rest day after day
-          <ul>
-		  <li>Solution: Several nights of extended rest</li>
-		  </ul>
-        </li>
-        <li><strong>Acute Fatigue</strong>: Not enough rest over one night
-          <ul>
-		  <li>Solution: One night of extended rest</li>
-		  </ul>
-        </li>
-      </ul>
-    </div>
-<br>
-    <div class="box">
-      <h2>Three Required Documents to Make a Flight Legal (FAR 121.695)</h2>
-      <ul>
-        <li>Dispatch Release (<b>FATWIVES</b>)
-          <ul>
-            <li><b>F</b>uel (Minimum Supply)</li>
-            <li><b>A</b>irports</li>
-            <li><b>T</b>rip or Tail #</li>
-            <li><b>W</b>eather Package
-            <li><b>I</b>FR (Instrument Flight Rules)</li>
-            <li><b>V</b>FR (Visual Flight Rules)</li>
-            <li><b>E</b>TOPS/<b>E</b>TP</li>
-            <li><b>S</b>ignatures (PIC &amp; DX)</li>
-            </li>
-          </ul>
-        </li>
-        <li><b>Load Manifest</b>
-          <ul>
-            <li>AC Weight</li>
-            <li>Fuel</li>
-            <li>Cargo</li>
-            <li>Crewmembers</li>
-            <li>Passengers</li>
-          </ul>
-        </li>
-        <li><b>Flight Plan</b>
-          <ul>
-            <li>Route of flight: e.g., KSAN.SID.DCT.WAYPT.DCT.STAR.KDAL</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </main>
-  <script type="module" src="flash.js"></script>
+
+<!-- Search functionality -->
+<script>
+  document.getElementById('ntkSearch').addEventListener('input', (e) => {
+    const q = e.target.value.toLowerCase();
+    document.querySelectorAll('.accordion-section').forEach(s => {
+      const match = s.textContent.toLowerCase().includes(q);
+      s.style.display = match ? '' : 'none';
+      if (match && q.length > 0) s.classList.add('open');
+    });
+  });
+</script>
+
   <div id="footer-placeholder"></div>
   <script type="module">
     import { loadFooter } from './js/footer.js';

@@ -876,3 +876,421 @@ footer hr { display: none; }
 .content {
   animation: fadeUp 0.4s ease both;
 }
+
+/* =============================================
+   11) Design 1 — Open layout (flashcards page)
+   ============================================= */
+
+.open-layout {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px 120px;
+  animation: fadeUp 0.4s ease both;
+}
+
+.open-layout .page-title {
+  font-size: 2em;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.open-layout .page-subtitle {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 14px;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+/* Category pill bar (horizontal scroll) */
+.category-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+  animation: fadeUp 0.4s 0.05s ease both;
+}
+
+.category-bar::-webkit-scrollbar { display: none; }
+
+.category-bar label {
+  flex-shrink: 0;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-dim);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.category-bar label:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+  border-color: var(--text-dim);
+}
+
+.category-bar label.selected {
+  background: var(--accent-glow) !important;
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+.category-bar input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Button row for start/clear */
+.action-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.4s 0.1s ease both;
+}
+
+.action-btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.action-btn:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.action-btn.primary {
+  background: var(--accent-glow);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.action-btn.primary:hover {
+  background: rgba(74, 158, 255, 0.25);
+}
+
+/* Progress bar row */
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  animation: fadeUp 0.4s 0.15s ease both;
+}
+
+.progress-row .progress-text {
+  font-size: 13px;
+  color: var(--text-dim);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.progress-row .progress-text strong {
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.progress-track {
+  flex: 1;
+  height: 6px;
+  background: var(--surface);
+  border-radius: 100px;
+  overflow: hidden;
+  min-width: 120px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--green));
+  border-radius: 100px;
+  transition: width 0.6s cubic-bezier(.22,1,.36,1);
+}
+
+/* Flashcard area in open layout */
+.open-layout .flashcard-row {
+  margin-bottom: 24px;
+  animation: fadeUp 0.4s 0.2s ease both;
+}
+
+.open-layout .flashcard {
+  min-height: 320px;
+}
+
+/* Remove card & progress indicator row */
+.card-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 10px;
+  animation: fadeUp 0.4s 0.25s ease both;
+}
+
+/* Keyboard hints */
+.keyboard-hints {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  font-size: 12px;
+  color: var(--text-dim);
+  opacity: 0.6;
+  margin-top: 24px;
+  animation: fadeUp 0.4s 0.3s ease both;
+}
+
+.keyboard-hints span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+kbd {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  padding: 2px 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-mid);
+}
+
+@media (max-width: 640px) {
+  .open-layout { padding: 20px 16px 80px; }
+  .open-layout .page-title { font-size: 1.5em; }
+  .open-layout .flashcard { min-height: 260px; }
+  .keyboard-hints { display: none; }
+  .action-row { flex-wrap: wrap; }
+  .action-btn { padding: 10px 20px; font-size: 13px; }
+  .progress-row { flex-wrap: wrap; }
+}
+
+/* =============================================
+   12) Design 1 — Accordion sections (NTK page)
+   ============================================= */
+
+/* Page header for NTK */
+.ntk-page-header {
+  margin-bottom: 28px;
+}
+
+.ntk-page-header h1 {
+  display: inline;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ntk-page-header .hl {
+  background: linear-gradient(90deg, var(--accent), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ntk-page-header p {
+  color: var(--text-dim);
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* Search bar */
+.ntk-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  height: 46px;
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 24px;
+  transition: border 0.15s;
+}
+
+.ntk-search:focus-within { border-color: var(--accent); }
+
+.ntk-search svg {
+  width: 16px;
+  height: 16px;
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+
+.ntk-search input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+}
+
+.ntk-search input::placeholder { color: var(--text-dim); }
+
+/* Accordion section */
+.accordion-section {
+  margin-bottom: 10px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.accordion-section:hover { border-color: var(--border-bright); }
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.accordion-header:hover { background: var(--surface-hover); }
+
+/* Color bar indicator */
+.accordion-bar {
+  width: 4px;
+  height: 28px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.accordion-bar.blue { background: var(--accent); }
+.accordion-bar.green { background: var(--green); }
+.accordion-bar.amber { background: var(--amber); }
+.accordion-bar.red { background: var(--red); }
+.accordion-bar.purple { background: #9b7aff; }
+.accordion-bar.teal { background: #34b8a8; }
+
+.accordion-info { flex: 1; }
+
+.accordion-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 1px;
+}
+
+.accordion-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.accordion-chevron {
+  width: 18px;
+  height: 18px;
+  color: var(--text-dim);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.accordion-section.open .accordion-chevron {
+  transform: rotate(180deg);
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(.22,1,.36,1);
+}
+
+.accordion-section.open .accordion-body {
+  max-height: 5000px;
+}
+
+.accordion-inner {
+  padding: 0 20px 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+/* Items inside accordion */
+.ntk-item {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(42, 46, 61, 0.5);
+}
+
+.ntk-item:last-child { border-bottom: none; }
+
+.ntk-item-q {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.ntk-item-q::before {
+  content: '▸';
+  color: var(--accent);
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.ntk-item-a {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+  padding-left: 18px;
+}
+
+.ntk-item-a strong {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.ntk-item-a code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  background: var(--accent-glow);
+  color: var(--accent);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+@media (max-width: 640px) {
+  .accordion-header { padding: 14px 16px; }
+  .accordion-inner { padding: 0 16px 16px; padding-top: 12px; }
+  .ntk-item-q, .ntk-item-a { font-size: 13px; }
+  .ntk-page-header h1 { font-size: 1.6em; }
+}

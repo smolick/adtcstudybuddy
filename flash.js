@@ -70,6 +70,17 @@ container.querySelectorAll('.marker')?.forEach(el => el.remove());
 		`flashcard ${flipped ? 'back' : 'front'}`;
     document.getElementById('progressIndicator').textContent =
 		`Card ${currentIndex + 1} of ${flashcards.length}`;
+
+    // Update progress bar if it exists
+    const progressRow = document.getElementById('progressRow');
+    const progressFill = document.getElementById('progressFill');
+    const progressTextEl = document.getElementById('progressText');
+    if (progressRow) {
+      progressRow.style.display = 'flex';
+      const pct = ((currentIndex + 1) / flashcards.length * 100).toFixed(1);
+      if (progressFill) progressFill.style.width = pct + '%';
+      if (progressTextEl) progressTextEl.innerHTML = `Card <strong>${currentIndex + 1}</strong> of <strong>${flashcards.length}</strong>`;
+    }
   }
 function handleClickZone(direction) {
     if (!flashcards.length) return;
@@ -118,14 +129,14 @@ function startSelectedStudy() {
   }
 
   const section  = document.querySelector('.category-section');
-  const btnGroup = section.querySelector('.button-group');
+  const btnGroup = section ? section.querySelector('.button-group') : null;
 
   const allLabel = document.createElement('label');
   allLabel.innerHTML = `
     <input type="checkbox" id="check-all">
     All <span id="count-all"></span>
   `;
-  section.insertBefore(allLabel, section.firstChild);
+  if (section) section.insertBefore(allLabel, section.firstChild);
 
   categoryNames.forEach(key => {
     const lbl = document.createElement('label');
@@ -133,7 +144,11 @@ function startSelectedStudy() {
       <input type="checkbox" id="check-${key}">
       ${prettyNames[key]} <span id="count-${key}"></span>
     `;
-    section.insertBefore(lbl, btnGroup);
+    if (btnGroup) {
+      section.insertBefore(lbl, btnGroup);
+    } else if (section) {
+      section.appendChild(lbl);
+    }
   });
 
   const total = categoryNames.reduce((sum, k) => sum + categoryData[k].length, 0);
