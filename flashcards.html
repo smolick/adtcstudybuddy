@@ -17,17 +17,16 @@
   <h1 class="page-title">Flashcards</h1>
   <p class="page-subtitle">Select the categories you'd like to study, then hit <strong style="color:var(--accent)">Start Studying</strong>.</p>
 
-  <!-- Category pills — flash.js will inject labels here -->
-  <div class="category-bar" id="categoryBar">
-    <div class="category-section" id="categorySection">
-      <!-- flash.js injects checkboxes here -->
+  <!-- Flashcard (top of page) -->
+  <div class="flashcard-row" id="flashcardRow">
+    <div class="flashcard" id="flashcard">
+      <div class="card-content" id="cardContent"></div>
+      <div class="click-zone left"  onclick="handleClickZone('backward')" title="Back"></div>
+      <div class="click-zone right" onclick="handleClickZone('forward')"  title="Forward"></div>
     </div>
-  </div>
-
-  <!-- Action buttons -->
-  <div class="action-row">
-    <button class="action-btn" onclick="uncheckAll()">Clear Selection</button>
-    <button class="action-btn primary" onclick="startSelectedStudy()">Start Studying</button>
+    <div class="card-controls-row">
+      <span class="progress-text" id="progressIndicator"></span>
+    </div>
   </div>
 
   <!-- Progress bar (hidden until studying) -->
@@ -38,16 +37,17 @@
     </div>
   </div>
 
-  <!-- Flashcard -->
-  <div class="flashcard-row" id="flashcardRow">
-    <div class="flashcard" id="flashcard">
-      <div class="card-content" id="cardContent"></div>
-      <div class="click-zone left"  onclick="handleClickZone('backward')" title="Back"></div>
-      <div class="click-zone right" onclick="handleClickZone('forward')"  title="Forward"></div>
+  <!-- Category pills -->
+  <div class="category-bar" id="categoryBar">
+    <div class="category-section" id="categorySection">
+      <!-- flash.js injects checkboxes here -->
     </div>
-    <div class="card-controls-row">
-      <span class="progress-text" id="progressIndicator"></span>
-    </div>
+  </div>
+
+  <!-- Action buttons -->
+  <div class="action-row">
+    <button class="action-btn" onclick="uncheckAll()">Clear Selection</button>
+    <button class="action-btn primary" onclick="startSelectedStudy()">Start Studying</button>
   </div>
 
   <!-- Keyboard hints -->
