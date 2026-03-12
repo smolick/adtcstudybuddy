@@ -1345,3 +1345,16 @@ kbd {
   .ntk-item-q, .ntk-item-a { font-size: 13px; }
   .ntk-page-header h1 { font-size: 1.6em; }
 }
+
+/* Generic answer hide/show for Q&A pages */
+.answer.hidden {
+  display: none !important;
+}
+
+.qa-toggle .ntk-item-q {
+  cursor: pointer;
+}
+
+.qa-toggle .ntk-item-q:hover {
+  color: var(--text);
+}

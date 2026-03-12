@@ -1,182 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Cloud Visualization</title>
-	<link rel="stylesheet" href="flash.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Cloud Visualization — ADTC Study Buddy</title>
+  <link rel="stylesheet" href="flash.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<div id="header-placeholder"></div>
-		<script type="module">
-			import { loadHeader } from './js/header.js';
-			loadHeader().catch(console.error);
-		</script>
-<main class="content">
-	
-<h1>Cloud Visualization</h1>
-	
-<h3>
-<center>
-	Based on the Image and Information. Answer the questions below.<br>
-You can either click each question to show/hide the answer OR there is a button below to show all the answers at once.
-</center>
-</h3>
-	
-<div class="box"><img src="img/cloudvisualization.jpg"></div>
-	
-<div class="box">
-<strong>Cloud Classification: By Altitude & Attitude</strong><br><br>
-Clouds are sorted by the height of their base and their overall shape. The four major cloud categories are:<br>
-	<ul>
-		<li>Low-Level Clouds (Surface to 6,500 ft AGL)</li>
-		<li>Mid-Level Clouds (6,500 to 20,000 ft AGL)</li>
-		<li>High-Level Clouds (Above 20,000 ft AGL)</li>
-		<li>Clouds With Vertical Development</li>
-	</ul>
+  <div id="header-placeholder"></div>
+  <script type="module">
+    import { loadHeader } from './js/header.js';
+    loadHeader().catch(console.error);
+  </script>
+
+<div class="open-layout">
+
+  <!-- Page header -->
+  <div class="ntk-page-header">
+    <h1>Cloud <span class="hl">Visualization</span></h1>
+    <p>Cloud classification by altitude and attitude — answer the questions below to test your knowledge.</p>
+  </div>
+
+  <!-- Search -->
+  <div class="ntk-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <input type="text" placeholder="Search..." id="ntkSearch">
+  </div>
+
+  <!-- Cloud Chart Image -->
+  <div class="accordion-section open">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar blue"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Cloud Chart Reference</div>
+        <div class="accordion-meta">Visual classification by altitude</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <img src="img/cloudvisualization.jpg" style="width:100%; border-radius:8px;" alt="Cloud visualization chart">
+      </div>
+    </div>
+  </div>
+
+  <!-- Classification Overview -->
+  <div class="accordion-section open">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar green"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Cloud Classification Overview</div>
+        <div class="accordion-meta">By Altitude & Attitude</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">Four major cloud categories</div>
+          <div class="ntk-item-a">
+            <strong>Low-Level Clouds</strong> — Surface to 6,500 ft AGL<br>
+            <strong>Mid-Level Clouds</strong> — 6,500 to 20,000 ft AGL<br>
+            <strong>High-Level Clouds</strong> — Above 20,000 ft AGL<br>
+            <strong>Clouds With Vertical Development</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Low-Level Clouds -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar amber"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Low-Level Clouds</div>
+        <div class="accordion-meta">Surface to 6,500 ft AGL</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">Composition & behavior</div>
+          <div class="ntk-item-a">Mostly made of water droplets, sometimes supercooled. These clouds can cause <strong>icing</strong> — bad news for pilots. Low clouds reduce visibility, create low ceilings, and shift rapidly, often grounding VFR flights.</div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Examples</div>
+          <div class="ntk-item-a"><strong>Stratus</strong>, <strong>Stratocumulus</strong>, <strong>Nimbostratus</strong></div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Impact on operations</div>
+          <div class="ntk-item-a">Poor visibility, potential icing, low ceilings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mid-Level Clouds -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar purple"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Mid-Level Clouds</div>
+        <div class="accordion-meta">6,500 to 20,000 ft AGL</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">Composition & behavior</div>
+          <div class="ntk-item-a">Formed from water droplets, ice crystals, or both — including supercooled water. These clouds can signal <strong>shifting weather patterns</strong> and moderate turbulence.</div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Examples</div>
+          <div class="ntk-item-a"><strong>Altostratus</strong>, <strong>Altocumulus</strong></div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Impact on operations</div>
+          <div class="ntk-item-a">Light icing and turbulence, weather transitions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- High-Level Clouds -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar teal"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">High-Level Clouds</div>
+        <div class="accordion-meta">Above 20,000 ft AGL</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">Composition & behavior</div>
+          <div class="ntk-item-a">Formed in stable air, composed of <strong>ice crystals</strong>. Typically bring calm skies and pose little threat.</div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Examples</div>
+          <div class="ntk-item-a"><strong>Cirrus</strong>, <strong>Cirrostratus</strong>, <strong>Cirrocumulus</strong></div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Impact on operations</div>
+          <div class="ntk-item-a"><strong>No turbulence or icing</strong> — great for scenic flights</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vertical Development -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar red"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Clouds With Vertical Development</div>
+        <div class="accordion-meta">Low/Mid-level base · Extends to high altitudes</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">Behavior</div>
+          <div class="ntk-item-a">Starting from low or mid-levels and rising sky-high. They build upward due to <strong>atmospheric instability</strong> — the higher they go, the more dramatic the weather.</div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Towering Cumulus</div>
+          <div class="ntk-item-a">Early signs of <strong>turbulence and instability</strong></div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Cumulonimbus</div>
+          <div class="ntk-item-a">The powerhouses of hazardous weather — <strong>thunderstorms, lightning, hail, tornadoes, wind shear, and severe turbulence</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Questions -->
+  <div class="accordion-section open">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar blue"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Questions</div>
+        <div class="accordion-meta">14 questions · Click each to reveal the answer</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">1. What is the temperature/dew point spread at DAL on the 1153z?</div>
+          <div class="ntk-item-a answer hidden">The spread is <strong>0</strong></div>
+        </div>
+
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">2. For a flight landing at 1238z what is the ceiling indicated in the METAR?</div>
+          <div class="ntk-item-a answer hidden">Overcast <strong>300'</strong></div>
+        </div>
+
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">3. Is an alternate required for an arrival to DAL at 13z?</div>
+          <div class="ntk-item-a answer hidden"><strong>Yes.</strong> The visibility is below 3SM and ceiling is forecast below 2000'</div>
+        </div>
+
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">4. What weather conditions can be expected for a flight arriving at 13z?</div>
+          <div class="ntk-item-a answer hidden">Variable direction winds up to 3 knots with 2SM visibility, mist, and a ceiling of 300'. Temporary conditions of 1/2SM, fog and an overcast ceiling of 200' is possible</div>
+        </div>
+
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">5. Which ATIS is currently in effect?</div>
+          <div class="ntk-item-a answer hidden">ATIS INFO <strong>J (Juliet)</strong></div>
+        </div>
+
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">6. What arrival runway(s) are being utilized for DAL?</div>
+          <div class="ntk-item-a answer hidden">According to the ATIS at 1404z they are utilizing <strong>13L and 13R</strong></div>
+        </div>
+
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">7. What is the reported RVR for runway 13L?</div>
+          <div class="ntk-item-a answer hidden"><strong>6000</strong> on touchdown and <strong>6000</strong> on rollout</div>
+        </div>
+
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">8. What is the visibility reported in the DFW METAR at 1253z?</div>
+          <div class="ntk-item-a answer hidden"><strong>1/2SM</strong></div>
+        </div>
+
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">9. Is the above value tower or surface?</div>
+          <div class="ntk-item-a answer hidden"><strong>Tower.</strong> The surface visibility is reported in the remarks section</div>
+        </div>
+
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">10. What is the reported RVR for DFW runway 17C?</div>
+          <div class="ntk-item-a answer hidden">Greater than <strong>6000 ft</strong> shown in the METAR. And 6000 for TD/MP/RO as shown in the RVR monitor</div>
+        </div>
+
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">11. For an arrival to DFW at 13z, what is/are the forecast visibilities?</div>
+          <div class="ntk-item-a answer hidden"><strong>4SM</strong> with a temporary condition of 1SM. Note how the actual doesn't match the forecast. Actual is 1/2SM and forecast shows the lowest as 1SM.</div>
+        </div>
+
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">12. Is the NWS expecting the low IFR conditions to improve in the Dallas area?</div>
+          <div class="ntk-item-a answer hidden"><strong>Yes</strong>, the forecast discussion is expecting conditions to gradually improve mid to late morning</div>
+        </div>
+
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">13. Does the NWS have low, medium, or high confidence for thunderstorms in the DFW area?</div>
+          <div class="ntk-item-a answer hidden">The forecast discussion indicates a <strong>low confidence</strong> in TS impacting the DFW area</div>
+        </div>
+
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">14. Based on an arrival to DAL at 14z, what is the likelihood of diversion? Low, medium, high?</div>
+          <div class="ntk-item-a answer hidden"><strong>Low.</strong> Arrival minimums are equal or greater than chart minimums. An alternate and some level of DISP ADD are appropriate for unexpected worsening of conditions.</div>
+        </div>
+
+        <div style="margin-top:16px; text-align:center;">
+          <button class="action-btn" id="toggleAnswers">Show All Answers</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </div>
 
-<div class="box">
-<strong>Low-Level Clouds (Surface to 6,500 ft AGL)</strong><br><br>
-Clouds found around this altitude are mostly made of water droplets, sometimes supercooled, these clouds can cause icing—bad news for pilots. Low clouds reduce visibility, create low ceilings, and shift rapidly, often grounding VFR (Visual Flight Rules) flights.<br><br>
-<strong>Example of these clouds:</strong><br>
-	<ul>
-		<li>Stratus</li>
-		<li>Stratocumulus</li>
-		<li>Nimbostratus</li>
-	</ul>
-<strong>Impact</strong><br>
-	<ul>
-		<li>Poor visibility</li>
-		<li>Potential icing</li>
-		<li>Low ceilings</li>
-	</ul>
-</div>
-
-<div class="box">
-<strong>Mid-Level Clouds (6,500 to 20,000 ft AGL)</strong><br><br>
-Formed from water droplets, ice crystals, or both—including supercooled water. These clouds can signal shifting weather patterns and moderate turbulence.<br><br>
-<ul>
-	<li>Examples: Altostratus, Altocumulus</li>
-	<li>Impact: Light icing and turbulence, weather transitions</li>
-</ul>
-</div>
-
-<div class="box">
-<strong>High-Level Clouds (Above 20,000 ft AGL)</strong><br><br>
-Formed in stable air, these icy beauties pose little threat. They’re composed of ice crystals and typically bring calm skies.<br><br>
-<ul>
-	<li>Examples: Cirrus, Cirrostratus, Cirrocumulus</li>
-	<li>Impact: No turbulence or icing; great for scenic flights!</li>
-</ul>
-</div>
-
-<div class="box">
-<strong>Clouds With Vertical Development</strong><br><br>
-Starting from low or mid-levels and rising sky-high, these clouds mean business. They build upward due to atmospheric instability, and the higher they go, the more dramatic the weather becomes.<br><br>
-<ul>
-	<li>Towering Cumulus: Early signs of turbulence and instability</li>
-	<li>Cumulonimbus: The powerhouses of hazardous weather—think thunderstorms, lightning, hail, tornadoes, wind shear, and severe turbulence.</li>
-</ul>
-</div>
-
-	<ul class="qa-list">
-		<li>
-			<p>
-			<strong>What is the temperature/dew point spread at DAL on the 1153z?</strong>
-			<span class="answer hidden">The spread is 0</span>
-			</p>
-		</li>
-		<li>
-			<p><strong>For a flight landing at 1238z what is the ceiling indicated in the METAR?</strong></p>
-			<p class="answer hidden">Overcast 300'</p>
-		</li>
-		<li>
-			<p><strong>Is an alternate required for an arrival to DAL at 13z?</strong></p>
-			<p class="answer hidden">Yes. The visibility is below 3SM and ceiling is forecast below 2000'</p>
-		</li>
-		<li>
-			<p><strong>What weather conditions can be expected for a flight arriving at 13z?</strong></p>
-			<p class="answer hidden">Variable direction winds up to 3 knots with 2SM visibility, mist, and a ceiling of 300'. Temporary conditions of 1/SM, fog and an overcast ceiling of 200' is possible</p>
-		</li>
-		<li>
-			<p><strong>Which ATIS is currently in effect?</strong></p>
-			<p class="answer hidden">ATIS INFO J (Juliet)</p>
-		</li>
-		<li>
-			<p><strong>What arrival runway(s) are being utilized for DAL?</strong></p>
-			<p class="answer hidden">According to the ATIS at 1404z they are utilizing 13L and 13R</p>
-		</li>
-		<li>
-			<p><strong>What is the reported RVR for runway 13L?</strong></p>
-			<p class="answer hidden">6000 on touchdown and 6000 on rollout</p>
-		</li>
-		<li>
-			<p><strong>What is the visibility reported in the DFW METAR at 1253z?</strong></p>
-			<p class="answer hidden">1/2SM</p>
-		</li>
-		<li>
-			<p><strong>Is the above value tower or surface?</strong></p>
-			<p class="answer hidden">Tower. The surface visibility is reported in the remarks section</p>
-		</li>
-		<li>
-			<p><strong>What is the reported RVR for DFW runway 17C?</strong></p>
-			<p class="answer hidden">Greater than 6000 ft shown in the METAR. And 6000 for TD/MP/RO as shown in the RVR monitor</p>
-		</li>
-		<li>
-			<p><strong>For an arrival to DFW at 13z, what is/are the forecast visibilities?</strong></p>
-			<p class="answer hidden">4SM with a temporary condition of 1sm. Note how the actual doesn't match the forecast. Actual is 1/2SM and forecast shows the lowest as 1SM.</p>
-		</li>
-		<li>
-			<p><strong>Is the NWS expecting the low IFR conditions to improve in the Dallas area?</strong></p>
-			<p class="answer hidden">Yes, the forecast discussion is expecting conditions to gradually improve mid to late morning</p>
-		</li>
-		<li>
-			<p><strong>Does the NWS have low, medium, or high confidence for thunderstorms in the DFW area?</strong></p>
-			<p class="answer hidden">The forecast discussion indicates a low confidence in TS impacting the DFW area</p>
-		</li>
-		<li>
-			<p><strong>Based on an arrival to DAL at 14z, what is the likelihood of diversion? Low, medium, high?</strong></p>
-			<p class="answer hidden">Low. Arrival minimums are equal or greater than chart minimums. An alternate and some level of DISP ADD are appropriate for unexpected worsening of conditions.</p>
-		</li>
-	</ul>
-	<div class="button-group">
-		<button id="toggleAnswers" style="margin-left: 20px;">Show Answers</button>
-	</div>
-</main>
-<div id="footer-placeholder"></div>
-	<script type="module">
-		import { loadFooter } from './js/footer.js';
-		loadFooter().catch(console.error);
-	</script>
-	<script>
-		document.addEventListener('DOMContentLoaded', () => {
-		const items   = document.querySelectorAll('.qa-list li');
-		const btn     = document.getElementById('toggleAnswers');
-		const answers = document.querySelectorAll('.qa-list .answer');
-			items.forEach((li, i) => {
-		const num = document.createElement('span');
-			num.className   = 'qa-number';
-			num.textContent = (i + 1) + '. ';
-			li.prepend(num);
-  });
-	btn.addEventListener('click', () => {
-    const show = answers[0].classList.contains('hidden');
-		answers.forEach(a => a.classList.toggle('hidden', !show));
-		btn.textContent = show ? 'Hide Answers' : 'Show Answers';
-  });
-	items.forEach(li => {
-	const question = li.querySelector('strong');
-		if (!question) return;
-			question.style.cursor = 'pointer';
-			question.addEventListener('click', () => {
-		const ans = li.querySelector('.answer');
-		if (ans) ans.classList.toggle('hidden');
+<!-- Search + Q&A toggle script -->
+<script>
+  document.getElementById('ntkSearch').addEventListener('input', (e) => {
+    const q = e.target.value.toLowerCase();
+    document.querySelectorAll('.accordion-section').forEach(s => {
+      const match = s.textContent.toLowerCase().includes(q);
+      s.style.display = match ? '' : 'none';
+      if (match && q.length > 0) s.classList.add('open');
     });
   });
-});
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.qa-toggle').forEach(item => {
+      const q = item.querySelector('.ntk-item-q');
+      const a = item.querySelector('.answer');
+      if (q && a) {
+        q.addEventListener('click', () => a.classList.toggle('hidden'));
+      }
+    });
+
+    const btn = document.getElementById('toggleAnswers');
+    const answers = document.querySelectorAll('.qa-toggle .answer');
+    if (btn && answers.length) {
+      btn.addEventListener('click', () => {
+        const show = answers[0].classList.contains('hidden');
+        answers.forEach(a => a.classList.toggle('hidden', !show));
+        btn.textContent = show ? 'Hide All Answers' : 'Show All Answers';
+      });
+    }
+  });
 </script>
 
-
+  <div id="footer-placeholder"></div>
+  <script type="module">
+    import { loadFooter } from './js/footer.js';
+    loadFooter().catch(console.error);
+  </script>
 </body>
 </html>
