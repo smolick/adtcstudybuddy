@@ -14,9 +14,24 @@
     </a>
     <div class="nav-links-desktop">
       <a href="flashcards.html">Flashcards</a>
-      <a href="needtoknow.html">Need to Know</a>
-      <a href="daytoday1.html">Day to Day</a>
-      <a href="cloudvisualization.html">Clouds</a>
+      <div class="dropdown" id="pagesDropdown">
+        <button class="dropbtn" onclick="this.parentElement.classList.toggle('open')">
+          Pages
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:4px; vertical-align:middle;"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown-content">
+          <!--
+            ADD NEW PAGES HERE
+            Just copy a line and change the href and text:
+            <a href="yourpage.html">Your Page Name</a>
+          -->
+          <a href="needtoknow.html">100% Need to Know</a>
+          <a href="daytoday1.html">Day to Day</a>
+          <a href="cloudvisualization.html">Cloud Visualization</a>
+          <a href="technical.html">Technical</a>
+          <a href="atcflightplan.html">ATC Flight Plan</a>
+        </div>
+      </div>
       <a href="https://ko-fi.com/smolick" target="_blank" class="nav-donate">Donate</a>
     </div>
     <button class="hamburger" onclick="document.querySelector('.mobile-nav-overlay').classList.add('open')">
@@ -30,8 +45,22 @@
   <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
   <a href="index.html">Home</a>
   <a href="flashcards.html">Flashcards</a>
+  <div class="mobile-nav-section-label">Pages</div>
   <a href="needtoknow.html">100% Need to Know</a>
   <a href="daytoday1.html">Day to Day</a>
   <a href="cloudvisualization.html">Cloud Visualization</a>
+  <a href="technical.html">Technical</a>
+  <a href="atcflightplan.html">ATC Flight Plan</a>
+  <div class="mobile-nav-divider"></div>
   <a href="https://ko-fi.com/smolick" target="_blank">Donate / Support</a>
 </div>
+
+<!-- Close dropdown when clicking outside -->
+<script>
+  document.addEventListener('click', function(e) {
+    const dropdown = document.getElementById('pagesDropdown');
+    if (dropdown && !dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+    }
+  });
+</script>

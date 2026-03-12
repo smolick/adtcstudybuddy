@@ -180,6 +180,8 @@ header {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
 }
 
 .dropbtn:hover {
@@ -187,27 +189,55 @@ header {
   background: var(--surface);
 }
 
+/* Chevron rotation when open */
+.dropdown.open .dropbtn svg {
+  transform: rotate(180deg);
+}
+
+.dropbtn svg {
+  transition: transform 0.2s ease;
+}
+
+/* Active state for the button when dropdown is open */
+.dropdown.open .dropbtn {
+  color: var(--text);
+  background: var(--surface);
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
-  top: calc(100% + 4px);
-  left: 0;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  min-width: 200px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  border-radius: 12px;
+  min-width: 220px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.5);
   z-index: 1001;
-  padding: 6px;
-  overflow: hidden;
+  padding: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+/* Click-to-open (replaces hover) */
+.dropdown.open .dropdown-content {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .dropdown-content a {
   display: block;
-  padding: 10px 14px;
+  padding: 11px 16px;
   color: var(--text-mid) !important;
-  border-radius: 6px;
-  font-size: 13px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.12s;
 }
 
 .dropdown-content a:hover {
@@ -215,7 +245,9 @@ header {
   color: var(--text) !important;
 }
 
-.dropdown:hover .dropdown-content { display: block; }
+/* Remove the old hover-to-open behavior */
+.dropdown:hover .dropdown-content { display: none; }
+.dropdown.open:hover .dropdown-content { display: block; }
 
 /* --------------------------------------------- */
 /* 2b) Hamburger Menu (mobile)                   */
@@ -280,6 +312,24 @@ header {
   background: none;
   border: none;
   font-family: inherit;
+}
+
+/* Mobile nav grouping */
+.mobile-nav-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  padding: 16px 40px 4px;
+  margin-top: 6px;
+}
+
+.mobile-nav-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--border);
+  margin: 10px auto;
 }
 
 /* --------------------------------------------- */
