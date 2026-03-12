@@ -1,314 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>ATC Flight Plan Strip</title>
-	<link rel="stylesheet" href="flash.css">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta charset="UTF-8">
+  <title>ATC Flight Plan Strip — ADTC Study Buddy</title>
+  <link rel="stylesheet" href="flash.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<div id="header-placeholder"></div>
-		<script type="module">
-			import { loadHeader } from './js/header.js';
-			loadHeader().catch(console.error);
-		</script>
-<main class="content">
-	
-<h1>ATC Flight Plan Strip</h1>
-	
-<h3>
-<center>
-Based on the information, try and answer the questions below.<br>
-You can either click each question to show/hide the answer OR there is a button below to show all the answers at once.
-</center>
-</h3>
-	
-<div class="box">
-  <strong>1.</strong> FF KZLAZQZX<BR>
-  <strong>2.</strong> (FPL-SWA4413-IS<BR>
-  <strong>3.</strong> -B737/M-SADE2E3GIJ4RWZ/LB1D1<BR>
-  <strong>4.</strong> -KSAN1700 KONT<BR>
-  <strong>5.</strong> -N0445F400 PADRZ2 EHF DCT NURAY SUUTR4<BR>
-  <strong>6.</strong> -KSMF0114 KOAK KSJC<BR>
-  <strong>7.</strong> -PBN/A1C1D1L1O1S2T1 NAV/Z1 DAT/1FANSE2PDC SUR/260B CANMANDATE DOF/250801<BR>
-  <strong>8.</strong> REG/N7735A RET/KZOA0035 SEL/CREQ CODE/AA7734 OPR/SWA)
+  <div id="header-placeholder"></div>
+  <script type="module">
+    import { loadHeader } from './js/header.js';
+    loadHeader().catch(console.error);
+  </script>
+
+<div class="open-layout">
+
+  <div class="ntk-page-header">
+    <h1>ATC <span class="hl">Flight Plan</span> Strip</h1>
+    <p>Break down each line of an ICAO flight plan. Click equipment codes to reveal what they mean.</p>
+  </div>
+
+  <div class="ntk-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <input type="text" placeholder="Search..." id="ntkSearch">
+  </div>
+
+  <!-- Full flight plan strip -->
+  <div class="accordion-section open">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar blue"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Full Flight Plan Strip</div>
+        <div class="accordion-meta">SWA4413 · KSAN → KSMF</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-a" style="font-family:'JetBrains Mono',monospace; font-size:12px; padding-left:0; line-height:2; white-space:pre-wrap;"><strong>1.</strong> FF KZLAZQZX
+<strong>2.</strong> (FPL-SWA4413-IS
+<strong>3.</strong> -B737/M-SADE2E3GIJ4RWZ/LB1D1
+<strong>4.</strong> -KSAN1700 KONT
+<strong>5.</strong> -N0445F400 PADRZ2 EHF DCT NURAY SUUTR4
+<strong>6.</strong> -KSMF0114 KOAK KSJC
+<strong>7.</strong> -PBN/A1C1D1L1O1S2T1 NAV/Z1 DAT/1FANSE2PDC SUR/260B CANMANDATE DOF/250801
+<strong>8.</strong> REG/N7735A RET/KZOA0035 SEL/CREQ CODE/AA7734 OPR/SWA)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Line 1 -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar green"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Line 1: FF KZLAZQZX</div>
+        <div class="accordion-meta">Filing destination</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">FF</div>
+          <div class="ntk-item-a">Flight Filed with <strong>ZLA ARTCC</strong> Computer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Line 2 -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar amber"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Line 2: FPL-SWA4413-IS</div>
+        <div class="accordion-meta">Flight plan ID · Rules of flight</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">FPL</div>
+          <div class="ntk-item-a">Filed Flight Plan under <strong>SWA4413</strong> (airline callsign)</div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">IS</div>
+          <div class="ntk-item-a">Rules of flight and type of flight — <strong>I</strong> = IFR, <strong>S</strong> = Scheduled</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Line 3 — Equipment (the big one) -->
+  <div class="accordion-section open">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar red"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Line 3: -B737/M-SADE2E3GIJ4RWZ/LB1D1</div>
+        <div class="accordion-meta">AC Type · Wake · Equipment · Transponder</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">-B737/M</div>
+          <div class="ntk-item-a">Boeing 737-700 with a <strong>Medium</strong> turbulence wake category</div>
+        </div>
+
+        <div style="margin:16px 0 8px; font-size:13px; font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:0.06em;">Equipment: -SADE2E3GIJ4RWZ</div>
+        <div style="font-size:13px; color:var(--text-dim); margin-bottom:12px;">Click each code to reveal its meaning</div>
+
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">S</div>
+          <div class="ntk-item-a answer hidden">Standard — equipped with <strong>VOR, VHF, ILS</strong></div>
+        </div>
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">A</div>
+          <div class="ntk-item-a answer hidden"><strong>GBAS</strong> Landing System (Ground Based Augmentation System)</div>
+        </div>
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">D</div>
+          <div class="ntk-item-a answer hidden"><strong>DME</strong> (Distance Measuring Equipment)</div>
+        </div>
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">E2</div>
+          <div class="ntk-item-a answer hidden"><strong>ACARS D-FIS</strong> — Aircraft Communication Addressing and Reporting System Data Link Flight Information Services</div>
+        </div>
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">E3</div>
+          <div class="ntk-item-a answer hidden"><strong>ACARS PDC</strong> — Aircraft Communication Addressing and Reporting System Pre-Departure Clearance</div>
+        </div>
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">G</div>
+          <div class="ntk-item-a answer hidden"><strong>GNSS</strong> (Global Navigation Satellite System)</div>
+        </div>
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">I</div>
+          <div class="ntk-item-a answer hidden"><strong>INS</strong> (Inertial Navigation System)</div>
+        </div>
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">J4</div>
+          <div class="ntk-item-a answer hidden"><strong>VDL Mode 2</strong> — VHF Data Link Mode 2</div>
+        </div>
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">R</div>
+          <div class="ntk-item-a answer hidden"><strong>PBN</strong> (Performance Based Navigation) — include type in PBN/… See Line 7</div>
+        </div>
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">W</div>
+          <div class="ntk-item-a answer hidden"><strong>RVSM</strong> — only if authorized for Reduced Vertical Separation Minima ops</div>
+        </div>
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">Z</div>
+          <div class="ntk-item-a answer hidden">Other capabilities — indicate in <strong>NAV/, DAT/, or COM/</strong>… See Line 7</div>
+        </div>
+
+        <div style="margin:20px 0 8px; font-size:13px; font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:0.06em;">Transponder / ADS-B / ADS-C: /LB1D1</div>
+
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">L</div>
+          <div class="ntk-item-a answer hidden"><strong>Mode S</strong> — Aircraft Identification (ACID), Altitude, Enhanced Surveillance, Extended Squitter</div>
+        </div>
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">B1</div>
+          <div class="ntk-item-a answer hidden"><strong>1090 MHz "out"</strong></div>
+        </div>
+        <div class="ntk-item qa-toggle">
+          <div class="ntk-item-q" style="cursor:pointer;">D1</div>
+          <div class="ntk-item-a answer hidden"><strong>ADS-C FANS 1/A</strong> — Automatic Dependent Surveillance - Contract, Future Air Navigation System</div>
+        </div>
+
+        <div style="margin-top:16px; text-align:center;">
+          <button class="action-btn" id="toggleEquipment">Show All Codes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Line 4 -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar purple"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Line 4: -KSAN1700 KONT</div>
+        <div class="accordion-meta">Departure · Time · Alternate</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">Content</div>
+          <div class="ntk-item-a" style="color:var(--text-dim); font-style:italic;">Placeholder — content to be added</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Line 5 -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar teal"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Line 5: -N0445F400 PADRZ2 EHF DCT NURAY SUUTR4</div>
+        <div class="accordion-meta">Speed · Altitude · Route</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">Content</div>
+          <div class="ntk-item-a" style="color:var(--text-dim); font-style:italic;">Placeholder — content to be added</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Line 6 -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar blue"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Line 6: -KSMF0114 KOAK KSJC</div>
+        <div class="accordion-meta">Destination · ETE · Alternates</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">Content</div>
+          <div class="ntk-item-a" style="color:var(--text-dim); font-style:italic;">Placeholder — content to be added</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Line 7 -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar green"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Line 7: PBN / NAV / DAT / SUR / DOF</div>
+        <div class="accordion-meta">Supplementary information</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">Content</div>
+          <div class="ntk-item-a" style="color:var(--text-dim); font-style:italic;">Placeholder — content to be added</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Line 8 -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar amber"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Line 8: REG / RET / SEL / CODE / OPR</div>
+        <div class="accordion-meta">Registration · SELCAL · Operator</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">Content</div>
+          <div class="ntk-item-a" style="color:var(--text-dim); font-style:italic;">Placeholder — content to be added</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
-	
-<div class="box">
-<h3>1. FF KZLAZQZX</h3>
-	FF - Flight Filed with ZLA ARTCC Computer
-</div>
 
-<div class="box">
-<h3>2. FPL-SWA4413-IS</h3>
-	FPL - Filed Flight Plan under SWA4413 (Airlines callsign)<br>
-	IS - Rules of flight and type of flight (I - IFR; S - Scheduled)
-</div>
+<script>
+  // Search
+  document.getElementById('ntkSearch').addEventListener('input', (e) => {
+    const q = e.target.value.toLowerCase();
+    document.querySelectorAll('.accordion-section').forEach(s => {
+      const match = s.textContent.toLowerCase().includes(q);
+      s.style.display = match ? '' : 'none';
+      if (match && q.length > 0) s.classList.add('open');
+    });
+  });
 
-<div class="box">
-<h3>3. -B737/M-SADE2E3GIJ4RWZ/LB1D1</h3>
-	This is broken down into four different parts, AC Type, Wake Category, Equipment & Capability.<br><br>
-	<strong>-B737/M</strong> - This will be a Boeing 737-700 with a Medium turbulence wake category.<br><br>
-	<strong>-SADE2E3GIJ4RWZ</strong> - This string will be the equipement on the aircraft.<br><br>
-	<div class="qa-section">
-		<ul class="q-list">
-			<li>
-				<p>
-					<strong>S</strong>
-					<span class="answer hidden">- Standard, equiped with VOR, VHF, ILS</span>
-				</p>
-			</li>
-			<li>
-				<p>
-					<strong>A</strong>
-					<span class="answer hidden">- Ground Based Augmentation System(GBAS) Landing System</span>
-				</p>
-			</li>
-			<li>
-				<p>
-					<strong>D</strong>
-					<span class="answer hidden">- Distance Measuring Equipment(DME)</span>
-				</p>
-			</li>
-			<li>
-				<p>
-					<strong>E2</strong>
-					<span class="answer hidden">- Aircraft Communication Addressing and Reporting System (ACARS) Data Link (D)-Flight Information Services (FIS)(ACARS D-FIS)</span>
-				</p>
-			</li>
-			<li>
-				<p>
-					<strong>E3</strong>
-					<span class="answer hidden">- Aircraft Communication Addressing and Reporting System (ACARS) Pre-Departure Clearance (PDC)(ACARS PDC)</span>
-				</p>
-			</li>
-			<li>
-				<p>
-					<strong>G</strong>
-					<span class="answer hidden">- Global Navigation Satellite System(GNSS)</span>
-				</p>
-			</li>
-			<li>
-				<p>
-					<strong>I</strong>
-					<span class="answer hidden">- Inertial Navigation System(INS)</span>
-				</p>
-			</li>
-			<li>
-				<p>
-					<strong>J4</strong>
-					<span class="answer hidden">- VDL Mode 2 - VHF Data Link(VDL) Mode 2</span>
-				</p>
-			</li>
-			<li>
-				<p>
-					<strong>R</strong>
-					<span class="answer hidden">- Preformance Based Navigation(PBN) - include type in PBN/...See in row 7.</span>
-				</p>
-			</li>
-			<li>
-				<p>
-					<strong>W</strong>
-					<span class="answer hidden">- only if authorized Reduced Vertical Separation Minima(RVSM) ops</span>
-				</p>
-			</li>
-			<li>
-				<p>
-					<strong>Z</strong>
-					<span class="answer hidden">- Other capabilities - indicate in NAV/, DAT/, or COM/...See in row 7.</span>
-				</p>
-			</li>
-		</ul>
-	<div class="qa-section">
-		<strong>/LB1D1</strong> - Transponder/ADS-B/ADS-C
-		<ul class="q-list">
-			<li>
-				<p>
-					<strong>L</strong>
-					<span class="answer hidden">- Mode S- Aircraft Identification(ACID), Altitude, Enhanced Surveillance, Extended Squitter</span></li>
-			<li>
-				<p>
-					<strong>B1</strong>
-					<span class="answer hidden">- 1090 MHz “out”</span></li>
-			<li>
-				<p>
-					<strong>D1</strong>
-					<span class="answer hidden">- Automatic Dependent Surveillance - Contract (ADS-C) Future Air Navigation System (FANS) 1/A</span>
-			</li>
-		</ul>
-	</div>
-		<div class="button-group">
-			<button class="toggle-answers">Show Answers</button>
-		</div>
-	</div>
-</div>
+  // Click to toggle individual equipment codes
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.qa-toggle').forEach(item => {
+      const q = item.querySelector('.ntk-item-q');
+      const a = item.querySelector('.answer');
+      if (q && a) {
+        q.addEventListener('click', () => a.classList.toggle('hidden'));
+      }
+    });
 
-<div class="box">
-<h3>4. -KSAN1700 KONT</h3>
-	SSSSSSSSSS
-	<div class="qa-section">
-		<ul class="q-list">
-			<li>
-				<p>
-					<strong>SSSSS</strong>
-					<span class="answer hidden">SSSSSSSS</span>
-				</p>
-			</li>
-		</ul>
-		<div class="button-group">
-			<button class="toggle-answers">Show Answers</button>
-		</div>
-	</div>
-</div>
+    // Show/hide all equipment codes
+    const btn = document.getElementById('toggleEquipment');
+    const answers = document.querySelectorAll('.qa-toggle .answer');
+    if (btn && answers.length) {
+      btn.addEventListener('click', () => {
+        const show = answers[0].classList.contains('hidden');
+        answers.forEach(a => a.classList.toggle('hidden', !show));
+        btn.textContent = show ? 'Hide All Codes' : 'Show All Codes';
+      });
+    }
+  });
+</script>
 
-<div class="box">
-<h3>5. -N0445F400 PADRZ2 EHF DCT NURAY SUUTR4</h3>
-	SSSSSSSSSS
-	<div class="qa-section">
-		<ul class="q-list">
-			<li>
-				<p>
-					<strong>SSSSS</strong>
-					<span class="answer hidden">SSSSSSSS</span>
-				</p>
-			</li>
-		</ul>
-		<div class="button-group">
-			<button class="toggle-answers">Show Answers</button>
-		</div>
-	</div>
-</div>
-
-<div class="box">
-<h3>6. -KSMF0114 KOAK KSJC</h3>
-	SSSSSSSSSS
-	<div class="qa-section">
-		<ul class="q-list">
-			<li>
-				<p>
-					<strong>SSSSS</strong>
-					<span class="answer hidden">SSSSSSSS</span>
-				</p>
-			</li>
-		</ul>
-		<div class="button-group">
-			<button class="toggle-answers">Show Answers</button>
-		</div>
-	</div>
-</div>
-
-<div class="box">
-<h3>7. -PBN/A1C1D1L1O1S2T1 NAV/Z1 DAT/1FANSE2PDC SUR/260B CANMANDATE DOF/250801</h3>
-	SSSSSSSSSS
-	<div class="qa-section">
-		<ul class="q-list">
-			<li>
-				<p>
-					<strong>SSSSS</strong>
-					<span class="answer hidden">SSSSSSSS</span>
-				</p>
-			</li>
-		</ul>
-		<div class="button-group">
-			<button class="toggle-answers">Show Answers</button>
-		</div>
-	</div>
-</div>
-
-	
-<div class="box">
-<h3>8. REG/N7735A RET/KZOA0035 SEL/CREQ CODE/AA7734 OPR/SWA)</h3>
-	SSSSSSSSSS
-	<div class="qa-section">
-		<ul class="q-list">
-			<li>
-				<p>
-					<strong>SSSSS</strong>
-					<span class="answer hidden">SSSSSSSS</span>
-				</p>
-			</li>
-		</ul>
-		<div class="button-group">
-			<button class="toggle-answers">Show Answers</button>
-		</div>
-	</div>
-</div>
-
-	
-<div class="qa-section">
-	<ul class="qa-list">
-		<li>
-			<p>
-			<strong>What is the temperature/dew point spread at DAL on the 1153z?</strong>
-			<span class="answer hidden">The spread is 0</span>
-			</p>
-		</li>
-		<li>
-			<p><strong>For a flight landing at 1238z what is the ceiling indicated in the METAR?</strong></p>
-			<p class="answer hidden">Overcast 300'</p>
-		</li>
-		<li>
-			<p><strong>Is an alternate required for an arrival to DAL at 13z?</strong></p>
-			<p class="answer hidden">Yes. The visibility is below 3SM and ceiling is forecast below 2000'</p>
-		</li>
-		<li>
-			<p><strong>What weather conditions can be expected for a flight arriving at 13z?</strong></p>
-			<p class="answer hidden">Variable direction winds up to 3 knots with 2SM visibility, mist, and a ceiling of 300'. Temporary conditions of 1/SM, fog and an overcast ceiling of 200' is possible</p>
-		</li>
-		<li>
-			<p><strong>Which ATIS is currently in effect?</strong></p>
-			<p class="answer hidden">ATIS INFO J (Juliet)</p>
-		</li>
-		<li>
-			<p><strong>What arrival runway(s) are being utilized for DAL?</strong></p>
-			<p class="answer hidden">According to the ATIS at 1404z they are utilizing 13L and 13R</p>
-		</li>
-		<li>
-			<p><strong>What is the reported RVR for runway 13L?</strong></p>
-			<p class="answer hidden">6000 on touchdown and 6000 on rollout</p>
-		</li>
-		<li>
-			<p><strong>What is the visibility reported in the DFW METAR at 1253z?</strong></p>
-			<p class="answer hidden">1/2SM</p>
-		</li>
-		<li>
-			<p><strong>Is the above value tower or surface?</strong></p>
-			<p class="answer hidden">Tower. The surface visibility is reported in the remarks section</p>
-		</li>
-		<li>
-			<p><strong>What is the reported RVR for DFW runway 17C?</strong></p>
-			<p class="answer hidden">Greater than 6000 ft shown in the METAR. And 6000 for TD/MP/RO as shown in the RVR monitor</p>
-		</li>
-		<li>
-			<p><strong>For an arrival to DFW at 13z, what is/are the forecast visibilities?</strong></p>
-			<p class="answer hidden">4SM with a temporary condition of 1sm. Note how the actual doesn't match the forecast. Actual is 1/2SM and forecast shows the lowest as 1SM.</p>
-		</li>
-		<li>
-			<p><strong>Is the NWS expecting the low IFR conditions to improve in the Dallas area?</strong></p>
-			<p class="answer hidden">Yes, the forecast discussion is expecting conditions to gradually improve mid to late morning</p>
-		</li>
-		<li>
-			<p><strong>Does the NWS have low, medium, or high confidence for thunderstorms in the DFW area?</strong></p>
-			<p class="answer hidden">The forecast discussion indicates a low confidence in TS impacting the DFW area</p>
-		</li>
-		<li>
-			<p><strong>Based on an arrival to DAL at 14z, what is the likelihood of diversion? Low, medium, high?</strong></p>
-			<p class="answer hidden">Low. Arrival minimums are equal or greater than chart minimums. An alternate and some level of DISP ADD are appropriate for unexpected worsening of conditions.</p>
-		</li>
-	</ul>
-		<div class="button-group">
-			<button class="toggle-answers">Show Answers</button>
-		</div>
-	</div>
-</main>
-<div id="footer-placeholder"></div>
-	<script type="module">
-		import { loadFooter } from './js/footer.js';
-		loadFooter().catch(console.error);
-	</script>
-
-
-
-<script src="./js/toggle-answers.js"></script>
+  <div id="footer-placeholder"></div>
+  <script type="module">
+    import { loadFooter } from './js/footer.js';
+    loadFooter().catch(console.error);
+  </script>
 </body>
 </html>

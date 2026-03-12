@@ -1,166 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Technical</title>
-	<link rel="stylesheet" href="flash.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Technical — ADTC Study Buddy</title>
+  <link rel="stylesheet" href="flash.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<div id="header-placeholder"></div>
-		<script type="module">
-			import { loadHeader } from './js/header.js';
-			loadHeader().catch(console.error);
-		</script>
-<main class="content">
-	
-<h1>Technical</h1>
-	
-<h3>
-	<center>Everything from here on out will be after you pass you ADX and practical. This information is after becoming a Dispatcher.</center>
-</h3>
-	
-<div class="box">
-<strong>Jeppesen Aqequate Visibility Reference</strong><br><br>
-Airlines may specify other than standard takeoff minimums. The minimums and visual reference requirements will be contained in paragraphs C056 and C078 of their Ops Specs. For any operation in which the visbility is less than 1/2SM, Ops Specs paragraph C078 states the "visual reference" requirements. Visual references include various lighting or centerline markings.
+  <div id="header-placeholder"></div>
+  <script type="module">
+    import { loadHeader } from './js/header.js';
+    loadHeader().catch(console.error);
+  </script>
+
+<div class="open-layout">
+
+  <div class="ntk-page-header">
+    <h1><span class="hl">Technical</span></h1>
+    <p>Post-certification reference — everything from here on out is after you pass your ADX and practical.</p>
+  </div>
+
+  <div class="ntk-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <input type="text" placeholder="Search..." id="ntkSearch">
+  </div>
+
+  <!-- Jeppesen Adequate Visibility -->
+  <div class="accordion-section open">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar blue"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Jeppesen Adequate Visibility Reference</div>
+        <div class="accordion-meta">Ops Specs C056 & C078</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">Overview</div>
+          <div class="ntk-item-a">Airlines may specify other than standard takeoff minimums. The minimums and visual reference requirements will be contained in paragraphs <strong>C056</strong> and <strong>C078</strong> of their Ops Specs. For any operation in which the visibility is less than 1/2SM, Ops Specs paragraph C078 states the "visual reference" requirements. Visual references include various lighting or centerline markings.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C078 -->
+  <div class="accordion-section open">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar amber"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">C078 — IFR Lower Than Standard Takeoff Minimums</div>
+        <div class="accordion-meta">All Airports · RVR requirements</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">RVR reports</div>
+          <div class="ntk-item-a">Runway visual range (RVR) reports, when available for a particular runway, shall be used for all takeoff operations on that runway. All takeoff operations, based on RVR, must use the RVR reports from the locations along the runway specified in this paragraph.</div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">No visual aids available</div>
+          <div class="ntk-item-a">Visibility or RVV (Runway Visibility Value) <strong>1/4 statute mile</strong> may still be used, provided other runway markings or runway lighting provide pilots with adequate visual reference to continuously identify the takeoff surface and maintain directional control throughout the takeoff run.<br><br><em style="color:var(--text-dim);">(Almost any runway markings will work — CL lights, CL marking, runway edge lights, etc. A snow-covered runway without visible lighting wouldn't qualify. When you go below the 1/4SM or RVR1600' level you need specific lighting and/or markings which are listed with the takeoff minimums.)</em></div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">(1) Visibility 1/2 SM or TD zone RVR 1600</div>
+          <div class="ntk-item-a">Provided at least one of the following visual aids is available. The <strong>touchdown zone RVR report</strong>, if available, is controlling. The mid RVR report may be substituted for the touchdown zone RVR report if the touchdown zone RVR is not available.<br><br>
+            (a) Operative <strong>High Intensity Runway Lights (HIRL)</strong><br>
+            (b) Operative <strong>Runway Centerline Lights (CL)</strong><br>
+            (c) Serviceable <strong>Runway Centerline Markings (RCLM)</strong>
+          </div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">(2)</div>
+          <div class="ntk-item-a" style="color:var(--text-dim); font-style:italic;">Content to be added</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Low-Level Clouds reference -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar green"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">Low-Level Clouds</div>
+        <div class="accordion-meta">Surface to 6,500 ft AGL</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-q">Composition & behavior</div>
+          <div class="ntk-item-a">Clouds found around this altitude are mostly made of water droplets, sometimes supercooled. These clouds can cause <strong>icing</strong> — bad news for pilots. Low clouds reduce visibility, create low ceilings, and shift rapidly, often grounding VFR flights.</div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Examples</div>
+          <div class="ntk-item-a"><strong>Stratus</strong>, <strong>Stratocumulus</strong>, <strong>Nimbostratus</strong></div>
+        </div>
+        <div class="ntk-item">
+          <div class="ntk-item-q">Impact</div>
+          <div class="ntk-item-a">Poor visibility, potential icing, low ceilings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Placeholder sections for future content -->
+  <div class="accordion-section">
+    <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="accordion-bar purple"></div>
+      <div class="accordion-info">
+        <div class="accordion-title">More Coming Soon</div>
+        <div class="accordion-meta">Additional technical reference material</div>
+      </div>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <div class="ntk-item">
+          <div class="ntk-item-a" style="color:var(--text-dim); font-style:italic; padding-left:0;">This section will be expanded with additional post-certification technical content.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
-	
-<div class="box">
-	<strong>C078. IFR Lower Than Standard Takeoff Minimums. All Airports</strong><br><br>
-	Runway visual range (RVR) reports, when available for a particual runway, shall be used for all takeoff operations on that runway. All takeoff operations, based on RVR, must use the RVR reports from the locations along the runway specified in this paragraph. When takeoff minimums are equal to or less than the applicable standard takeoff minimum, the certifcate holder is authorized to use the loower than standard takeoff minimums described below:<br><br>
 
-	When no visual aids are available, visility or RVV (Runway Visibility Value) 1/4 statute mile may still be used, provided other runway markings or runway lighting provide pilots with adequate visual reference to continuously identiy the take off surface and maintain directional control throughout the takeoff run.<br><br>
-
-	(Almost any runway markings will work. CL lights, CL marking, runway edge lights, etc. A snow-covered runway without visbile lighting wouldn't qualify. When you go below the 1/4sm or RVR1600' level you need specific lighting and/or markings which are listed with the takeoff minimums.)<br><br>
-
-	(1) Visibility or runway visual value (RVV) 1/2 sm or touchdown zone RVR1600, provided at least one of the folllowing visual aids is available. The touchdown zone RVR report, if available, is controlling. The mid RVR reprot may be substituted for the touchdown zone RVR report if the touchdown zone RVR is not avilable.<br>
-	(a) Operative high intensity runway lights (HIRL).<br>
-	(b) Operative runway centerline lights (CL).<br>
-	(c) Serviceable runway centerline markings (RCLM).<br><br>
-
-	(2)
-</div>
-
-<div class="box">
-<strong>Low-Level Clouds (Surface to 6,500 ft AGL)</strong><br><br>
-Clouds found around this altitude are mostly made of water droplets, sometimes supercooled, these clouds can cause icing—bad news for pilots. Low clouds reduce visibility, create low ceilings, and shift rapidly, often grounding VFR (Visual Flight Rules) flights.<br><br>
-<strong>Example of these clouds:</strong><br>
-	<ul>
-		<li>Stratus</li>
-		<li>Stratocumulus</li>
-		<li>Nimbostratus</li>
-	</ul>
-<strong>Impact</strong><br>
-	<ul>
-		<li>Poor visibility</li>
-		<li>Potential icing</li>
-		<li>Low ceilings</li>
-	</ul>
-</div>
-
-<div class="box"></div>
-
-<div class="box"></div>
-
-<div class="box"></div>
-
-	
-	<ul class="qa-list">
-		<li>
-			<p>
-			<strong>What is the temperature/dew point spread at DAL on the 1153z?</strong>
-			<span class="answer hidden">The spread is 0</span>
-			</p>
-		</li>
-		<li>
-			<p><strong>For a flight landing at 1238z what is the ceiling indicated in the METAR?</strong></p>
-			<p class="answer hidden">Overcast 300'</p>
-		</li>
-		<li>
-			<p><strong>Is an alternate required for an arrival to DAL at 13z?</strong></p>
-			<p class="answer hidden">Yes. The visibility is below 3SM and ceiling is forecast below 2000'</p>
-		</li>
-		<li>
-			<p><strong>What weather conditions can be expected for a flight arriving at 13z?</strong></p>
-			<p class="answer hidden">Variable direction winds up to 3 knots with 2SM visibility, mist, and a ceiling of 300'. Temporary conditions of 1/SM, fog and an overcast ceiling of 200' is possible</p>
-		</li>
-		<li>
-			<p><strong>Which ATIS is currently in effect?</strong></p>
-			<p class="answer hidden">ATIS INFO J (Juliet)</p>
-		</li>
-		<li>
-			<p><strong>What arrival runway(s) are being utilized for DAL?</strong></p>
-			<p class="answer hidden">According to the ATIS at 1404z they are utilizing 13L and 13R</p>
-		</li>
-		<li>
-			<p><strong>What is the reported RVR for runway 13L?</strong></p>
-			<p class="answer hidden">6000 on touchdown and 6000 on rollout</p>
-		</li>
-		<li>
-			<p><strong>What is the visibility reported in the DFW METAR at 1253z?</strong></p>
-			<p class="answer hidden">1/2SM</p>
-		</li>
-		<li>
-			<p><strong>Is the above value tower or surface?</strong></p>
-			<p class="answer hidden">Tower. The surface visibility is reported in the remarks section</p>
-		</li>
-		<li>
-			<p><strong>What is the reported RVR for DFW runway 17C?</strong></p>
-			<p class="answer hidden">Greater than 6000 ft shown in the METAR. And 6000 for TD/MP/RO as shown in the RVR monitor</p>
-		</li>
-		<li>
-			<p><strong>For an arrival to DFW at 13z, what is/are the forecast visibilities?</strong></p>
-			<p class="answer hidden">4SM with a temporary condition of 1sm. Note how the actual doesn't match the forecast. Actual is 1/2SM and forecast shows the lowest as 1SM.</p>
-		</li>
-		<li>
-			<p><strong>Is the NWS expecting the low IFR conditions to improve in the Dallas area?</strong></p>
-			<p class="answer hidden">Yes, the forecast discussion is expecting conditions to gradually improve mid to late morning</p>
-		</li>
-		<li>
-			<p><strong>Does the NWS have low, medium, or high confidence for thunderstorms in the DFW area?</strong></p>
-			<p class="answer hidden">The forecast discussion indicates a low confidence in TS impacting the DFW area</p>
-		</li>
-		<li>
-			<p><strong>Based on an arrival to DAL at 14z, what is the likelihood of diversion? Low, medium, high?</strong></p>
-			<p class="answer hidden">Low. Arrival minimums are equal or greater than chart minimums. An alternate and some level of DISP ADD are appropriate for unexpected worsening of conditions.</p>
-		</li>
-	</ul>
-	<div class="button-group">
-		<button id="toggleAnswers" style="margin-left: 20px;">Show Answers</button>
-	</div>
-</main>
-<div id="footer-placeholder"></div>
-	<script type="module">
-		import { loadFooter } from './js/footer.js';
-		loadFooter().catch(console.error);
-	</script>
-	<script>
-		document.addEventListener('DOMContentLoaded', () => {
-		const items   = document.querySelectorAll('.qa-list li');
-		const btn     = document.getElementById('toggleAnswers');
-		const answers = document.querySelectorAll('.qa-list .answer');
-			items.forEach((li, i) => {
-		const num = document.createElement('span');
-			num.className   = 'qa-number';
-			num.textContent = (i + 1) + '. ';
-			li.prepend(num);
-  });
-	btn.addEventListener('click', () => {
-    const show = answers[0].classList.contains('hidden');
-		answers.forEach(a => a.classList.toggle('hidden', !show));
-		btn.textContent = show ? 'Hide Answers' : 'Show Answers';
-  });
-	items.forEach(li => {
-	const question = li.querySelector('strong');
-		if (!question) return;
-			question.style.cursor = 'pointer';
-			question.addEventListener('click', () => {
-		const ans = li.querySelector('.answer');
-		if (ans) ans.classList.toggle('hidden');
+<script>
+  document.getElementById('ntkSearch').addEventListener('input', (e) => {
+    const q = e.target.value.toLowerCase();
+    document.querySelectorAll('.accordion-section').forEach(s => {
+      const match = s.textContent.toLowerCase().includes(q);
+      s.style.display = match ? '' : 'none';
+      if (match && q.length > 0) s.classList.add('open');
     });
   });
-});
 </script>
 
+  <div id="footer-placeholder"></div>
+  <script type="module">
+    import { loadFooter } from './js/footer.js';
+    loadFooter().catch(console.error);
+  </script>
 </body>
 </html>
