@@ -205,7 +205,6 @@ header {
 }
 
 .dropdown-content {
-  display: none;
   position: absolute;
   top: calc(100% + 6px);
   left: 50%;
@@ -217,14 +216,15 @@ header {
   box-shadow: 0 12px 32px rgba(0,0,0,0.5);
   z-index: 1001;
   padding: 8px;
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
 }
 
-/* Click-to-open (replaces hover) */
+/* Click-to-open */
 .dropdown.open .dropdown-content {
-  display: block;
+  visibility: visible;
   opacity: 1;
   pointer-events: auto;
 }
@@ -244,10 +244,6 @@ header {
   background: var(--surface-hover) !important;
   color: var(--text) !important;
 }
-
-/* Remove the old hover-to-open behavior */
-.dropdown:hover .dropdown-content { display: none; }
-.dropdown.open:hover .dropdown-content { display: block; }
 
 /* --------------------------------------------- */
 /* 2b) Hamburger Menu (mobile)                   */
