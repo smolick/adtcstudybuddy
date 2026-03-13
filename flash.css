@@ -473,7 +473,6 @@ body,
 .flashcard-row {
   width: 100%;
   max-width: 800px;
-  height: 340px;
   margin-bottom: 40px;
   display: none;
   justify-content: center;
@@ -484,7 +483,8 @@ body,
   position: relative;
   width: 100%;
   max-width: 800px;
-  height: 100%;
+  min-height: 300px;
+  height: auto;
   border: 1px solid var(--border);
   border-radius: var(--card-radius);
   cursor: pointer;
@@ -492,7 +492,6 @@ body,
   align-items: center;
   justify-content: center;
   transition: border-color 0.2s;
-  overflow: hidden;
 }
 
 .flashcard.front {
@@ -513,8 +512,8 @@ body,
 }
 
 .flashcard.back {
-  background: linear-gradient(160deg, var(--surface) 0%, #1e2230 100%) !important;
-  border-color: var(--border) !important;
+  background: linear-gradient(160deg, #121822 0%, #182028 100%) !important;
+  border-color: var(--green) !important;
 }
 
 .flashcard.back::before {
@@ -525,7 +524,7 @@ body,
   transform: translateX(-50%);
   width: 60%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
   border-radius: 2px;
 }
 
@@ -545,7 +544,6 @@ body,
 .card-content {
   font-size: 1.8em;
   width: 100%;
-  max-height: 100%;
   display: block;
   text-align: center;
   padding: 24px;
@@ -553,7 +551,6 @@ body,
   white-space: pre-wrap;
   position: relative;
   color: var(--text);
-  overflow-y: auto;
 }
 
 /* Images inside cards should fill the card width */
@@ -820,7 +817,7 @@ footer hr { display: none; }
   .category-section label { font-size: 1.2em; }
   .button-group button { font-size: 1em; }
 
-  .flashcard-row { height: 280px; }
+  .flashcard { min-height: 240px; }
 }
 
 @media (hover: none) {
@@ -1147,7 +1144,7 @@ footer hr { display: none; }
 }
 
 .open-layout .flashcard {
-  height: 100%;
+  min-height: 300px;
 }
 
 /* Remove card & progress indicator row */
@@ -1191,7 +1188,7 @@ kbd {
 @media (max-width: 640px) {
   .open-layout { padding: 20px 16px 80px; }
   .open-layout .page-title { font-size: 1.5em; }
-  .open-layout .flashcard-row { height: 280px; }
+  .open-layout .flashcard { min-height: 240px; }
   .keyboard-hints { display: none; }
   .action-row { flex-wrap: wrap; }
   .action-btn { padding: 10px 20px; font-size: 13px; }
