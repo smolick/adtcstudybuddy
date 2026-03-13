@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search — ADTC Study Buddy</title>
+  <link rel="stylesheet" href="flash.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <script type="module">
+    import { loadHeader } from './js/header.js';
+    loadHeader().catch(console.error);
+  </script>
+
+<div class="open-layout">
+
+  <div class="ntk-page-header">
+    <h1><span class="hl">Search</span> All Pages</h1>
+    <p>Find anything across flashcards, notes, and study pages.</p>
+  </div>
+
+  <!-- Search input -->
+  <div class="ntk-toolbar">
+    <div class="ntk-search" style="flex:1;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" placeholder="Type to search across all pages..." id="globalSearch" autofocus>
+    </div>
+  </div>
+
+  <!-- Status -->
+  <div id="searchStatus" style="font-size:13px; color:var(--text-dim); margin-bottom:20px;">
+    Loading pages...
+  </div>
+
+  <!-- Results -->
+  <div id="searchResults"></div>
+
+</div>
+
+<script>
+(async () => {
+  // Pages to index — add new pages here
+  const pages = [
+    { url: 'needtoknow.html',          title: '100% Need to Know',  icon: '§' },
+    { url: 'daytoday1.html',           title: 'Day to Day #1',      icon: '☁' },
+    { url: 'cloudvisualization.html',   title: 'Cloud Visualization', icon: '☁' },
+    { url: 'technical.html',           title: 'Technical',           icon: '⚙' },
+    { url: 'atcflightplan.html',       title: 'ATC Flight Plan',     icon: '✈' },
+  ];
+
+  const barColors = ['blue', 'green', 'amber', 'red', 'purple', 'teal'];
+  const index = [];
+
+  // Fetch and parse each page
+  for (const page of pages) {
+    try {
+      const resp = await fetch(page.url);
+      if (!resp.ok) continue;
+      const html = await resp.text();
+
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+
+      // Index accordion sections
+      const sections = doc.querySelectorAll('.accordion-section');
+      if (sections.length) {
+        sections.forEach(section => {
+          const titleEl = section.querySelector('.accordion-title');
+          const metaEl = section.querySelector('.accordion-meta');
+          const bodyEl = section.querySelector('.accordion-inner');
+
+          const sectionTitle = titleEl ? titleEl.textContent.trim() : '';
+          const sectionMeta = metaEl ? metaEl.textContent.trim() : '';
+          const sectionBody = bodyEl ? bodyEl.textContent.trim() : '';
+
+          // Get individual items
+          const items = [];
+          section.querySelectorAll('.ntk-item').forEach(item => {
+            const q = item.querySelector('.ntk-item-q');
+            const a = item.querySelector('.ntk-item-a');
+            items.push({
+              question: q ? q.textContent.trim() : '',
+              answer: a ? a.textContent.trim() : ''
+            });
+          });
+
+          index.push({
+            page: page.title,
+            url: page.url,
+            icon: page.icon,
+            sectionTitle,
+            sectionMeta,
+            fullText: (sectionTitle + ' ' + sectionMeta + ' ' + sectionBody).toLowerCase(),
+            items
+          });
+        });
+      }
+
+      // Also index any .content .box sections (legacy pages)
+      const boxes = doc.querySelectorAll('.box');
+      if (boxes.length && !sections.length) {
+        boxes.forEach(box => {
+          const text = box.textContent.trim();
+          if (text.length < 5) return;
+          const heading = box.querySelector('strong, h2, h3');
+          index.push({
+            page: page.title,
+            url: page.url,
+            icon: page.icon,
+            sectionTitle: heading ? heading.textContent.trim() : page.title,
+            sectionMeta: '',
+            fullText: text.toLowerCase(),
+            items: []
+          });
+        });
+      }
+
+    } catch (err) {
+      console.warn('Could not index:', page.url, err);
+    }
+  }
+
+  // Also index flashcard data
+  try {
+    const flashMod = await import('./flash.js').catch(() => null);
+    // Flash.js is self-executing so we can't import its data directly
+    // Instead, index the flashcard JS files directly
+    const flashFiles = [
+      'needtoknow', 'acronyms', 'fars', 'airportminimums', 'cfrparts',
+      'acperformance', 'b738specslimits', 'wxproductsnoimages', 'airportdiagram',
+      'weatherrelatedconditions', 'theatmosphere', 'envoytest2024', 'tafalternates',
+      'ilslocapproach', 'atc', 'airspace', 'flightlevels', 'navigation'
+    ];
+
+    const prettyNames = {
+      needtoknow: '100% Need to Know!', acronyms: 'Acronyms', fars: 'FARs',
+      airportminimums: 'Airport Minimums', cfrparts: '14 CFR Parts',
+      acperformance: 'B737-800 Performance', b738specslimits: 'B737-800 Specs/Limits',
+      wxproductsnoimages: 'WX Products', airportdiagram: 'Airport Diagram',
+      weatherrelatedconditions: 'WX Related Conditions', theatmosphere: 'The Atmosphere',
+      envoytest2024: 'Airline Test 2024', tafalternates: 'Do I Need an Alternate?',
+      ilslocapproach: 'ILS or LOC Approach Plate', atc: 'ATC',
+      airspace: 'Airspaces', flightlevels: 'Flight Levels', navigation: 'Navigation'
+    };
+
+    for (const key of flashFiles) {
+      try {
+        const m = await import(`./flashcards/${key}.js`);
+        const cards = m[key] ?? m.default ?? [];
+        if (!cards.length) continue;
+
+        const allText = cards.map(c => {
+          const strip = (html) => {
+            const d = document.createElement('div');
+            d.innerHTML = html || '';
+            return d.textContent || '';
+          };
+          return strip(c.front) + ' ' + strip(c.back);
+        }).join(' ');
+
+        index.push({
+          page: 'Flashcards',
+          url: 'flashcards.html',
+          icon: '🃏',
+          sectionTitle: prettyNames[key] || key,
+          sectionMeta: cards.length + ' cards',
+          fullText: allText.toLowerCase(),
+          items: cards.slice(0, 5).map(c => {
+            const strip = (html) => {
+              const d = document.createElement('div');
+              d.innerHTML = html || '';
+              return d.textContent || '';
+            };
+            return { question: strip(c.front).substring(0, 120), answer: strip(c.back).substring(0, 120) };
+          })
+        });
+      } catch (e) { /* skip failed imports */ }
+    }
+  } catch (e) { /* skip flashcard indexing if it fails */ }
+
+  const statusEl = document.getElementById('searchStatus');
+  const resultsEl = document.getElementById('searchResults');
+  const searchInput = document.getElementById('globalSearch');
+
+  statusEl.textContent = `Indexed ${index.length} sections across ${pages.length + 1} pages. Start typing to search.`;
+
+  function highlightMatch(text, query) {
+    if (!query) return text;
+    const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(${escaped})`, 'gi');
+    return text.replace(regex, '<mark style="background:var(--accent-glow); color:var(--accent); padding:1px 3px; border-radius:3px;">$1</mark>');
+  }
+
+  function renderResults(query) {
+    if (!query || query.length < 2) {
+      resultsEl.innerHTML = '';
+      statusEl.textContent = `Indexed ${index.length} sections across ${pages.length + 1} pages. Start typing to search.`;
+      return;
+    }
+
+    const q = query.toLowerCase();
+    const matches = index.filter(entry => entry.fullText.includes(q));
+
+    statusEl.textContent = `${matches.length} result${matches.length !== 1 ? 's' : ''} for "${query}"`;
+
+    if (!matches.length) {
+      resultsEl.innerHTML = `
+        <div style="text-align:center; padding:40px 20px; color:var(--text-dim);">
+          <div style="font-size:32px; margin-bottom:12px;">🔍</div>
+          <div style="font-size:15px;">No results found for "<strong style="color:var(--text);">${query}</strong>"</div>
+          <div style="font-size:13px; margin-top:6px;">Try different keywords or check your spelling.</div>
+        </div>`;
+      return;
+    }
+
+    // Group by page
+    const grouped = {};
+    matches.forEach(m => {
+      if (!grouped[m.page]) grouped[m.page] = { url: m.url, icon: m.icon, sections: [] };
+      grouped[m.page].sections.push(m);
+    });
+
+    let html = '';
+    let colorIdx = 0;
+
+    for (const [pageName, data] of Object.entries(grouped)) {
+      const color = barColors[colorIdx % barColors.length];
+      colorIdx++;
+
+      html += `<div class="accordion-section open" style="margin-bottom:10px;">
+        <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+          <div class="accordion-bar ${color}"></div>
+          <div class="accordion-info">
+            <div class="accordion-title">${pageName}</div>
+            <div class="accordion-meta">${data.sections.length} matching section${data.sections.length !== 1 ? 's' : ''}</div>
+          </div>
+          <a href="${data.url}" style="font-size:12px; color:var(--accent); text-decoration:none; padding:6px 12px; border:1px solid var(--accent); border-radius:6px; flex-shrink:0; margin-right:10px;" onclick="event.stopPropagation();">Go to page →</a>
+          <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-inner">`;
+
+      data.sections.forEach(section => {
+        html += `<div class="ntk-item" style="padding:12px 0;">
+          <div class="ntk-item-q">${highlightMatch(section.sectionTitle, query)}</div>`;
+
+        if (section.sectionMeta) {
+          html += `<div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-dim); padding-left:18px; margin-bottom:6px;">${section.sectionMeta}</div>`;
+        }
+
+        // Show matching items (up to 3)
+        const matchingItems = section.items.filter(item =>
+          item.question.toLowerCase().includes(q) || item.answer.toLowerCase().includes(q)
+        ).slice(0, 3);
+
+        if (matchingItems.length) {
+          matchingItems.forEach(item => {
+            html += `<div style="padding-left:18px; margin-top:6px; font-size:13px; line-height:1.6;">
+              <span style="color:var(--text-mid);">${highlightMatch(item.question.substring(0, 100), query)}</span>`;
+            if (item.answer) {
+              html += `<br><span style="color:var(--text-dim);">${highlightMatch(item.answer.substring(0, 120), query)}</span>`;
+            }
+            html += `</div>`;
+          });
+        }
+
+        html += `</div>`;
+      });
+
+      html += `</div></div></div>`;
+    }
+
+    resultsEl.innerHTML = html;
+  }
+
+  // Search on input
+  let debounceTimer;
+  searchInput.addEventListener('input', (e) => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => renderResults(e.target.value.trim()), 150);
+  });
+
+  // Support ?q= URL parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const initialQuery = urlParams.get('q');
+  if (initialQuery) {
+    searchInput.value = initialQuery;
+    // Small delay to let index finish building
+    setTimeout(() => renderResults(initialQuery), 100);
+  }
+})();
+</script>
+
+  <div id="footer-placeholder"></div>
+  <script type="module">
+    import { loadFooter } from './js/footer.js';
+    loadFooter().catch(console.error);
+  </script>
+</body>
+</html>
