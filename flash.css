@@ -481,14 +481,14 @@ body,
 .flashcard {
   position: relative;
   width: 100%;
-  min-width: 100%;
-  max-width: 100%;
   min-height: 300px;
   height: auto;
   border: 1px solid var(--border);
   border-radius: var(--card-radius);
   cursor: pointer;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -544,20 +544,13 @@ body,
 .card-content {
   font-size: 1.8em;
   width: 100%;
-  min-width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: block;
   text-align: center;
-  padding: 40px 24px;
+  padding: 24px;
   box-sizing: border-box;
   white-space: pre-wrap;
   position: relative;
   color: var(--text);
-  min-height: 300px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
 }
 
 /* Images inside cards should fill the card width */
