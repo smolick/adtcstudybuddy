@@ -512,8 +512,8 @@ body,
 }
 
 .flashcard.back {
-  background: linear-gradient(160deg, #121822 0%, #182028 100%) !important;
-  border-color: var(--green) !important;
+  background: linear-gradient(160deg, var(--surface) 0%, #1e2230 100%) !important;
+  border-color: var(--border) !important;
 }
 
 .flashcard.back::before {
@@ -524,12 +524,19 @@ body,
   transform: translateX(-50%);
   width: 60%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--green), transparent);
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
   border-radius: 2px;
 }
 
 .flashcard .card-content {
   line-height: 1.5;
+}
+
+/* Bold/strong inside flashcards uses blue accent, not green */
+.flashcard b, .flashcard strong,
+.card-content b, .card-content strong {
+  color: var(--accent) !important;
+  font-weight: 600;
 }
 
 .card-content {
