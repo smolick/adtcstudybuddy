@@ -473,16 +473,14 @@ body,
 .flashcard-row {
   width: 100%;
   max-width: 800px;
-  margin-bottom: 40px;
+  margin: 0 auto 40px;
   display: none;
-  justify-content: center;
   position: static !important;
 }
 
 .flashcard {
   position: relative;
   width: 100%;
-  max-width: 800px;
   min-height: 300px;
   height: auto;
   border: 1px solid var(--border);
@@ -491,7 +489,7 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .flashcard.front {
@@ -514,8 +512,8 @@ body,
 
 .flashcard.back {
   background: linear-gradient(160deg, var(--surface) 0%, #1e2230 100%) !important;
-  border-color: var(--green) !important;
-  box-shadow: 0 0 20px rgba(61, 214, 140, 0.08) !important;
+  border-color: var(--border) !important;
+  box-shadow: none !important;
 }
 
 .flashcard.back::before {
@@ -1141,7 +1139,7 @@ footer hr { display: none; }
 
 /* Flashcard area in open layout */
 .open-layout .flashcard-row {
-  margin-bottom: 24px;
+  margin: 0 auto 24px;
   animation: fadeUp 0.4s 0.2s ease both;
 }
 
