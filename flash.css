@@ -491,12 +491,13 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border-color 0.2s;
+  transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .flashcard.front {
   background: linear-gradient(160deg, var(--surface) 0%, #1e2230 100%);
   border-color: var(--border);
+  box-shadow: none;
 }
 
 .flashcard.front::before {
@@ -512,8 +513,9 @@ body,
 }
 
 .flashcard.back {
-  background: linear-gradient(160deg, #121822 0%, #182028 100%) !important;
+  background: linear-gradient(160deg, var(--surface) 0%, #1e2230 100%) !important;
   border-color: var(--green) !important;
+  box-shadow: 0 0 20px rgba(61, 214, 140, 0.08) !important;
 }
 
 .flashcard.back::before {
@@ -1155,6 +1157,11 @@ footer hr { display: none; }
   gap: 16px;
   margin-top: 10px;
   animation: fadeUp 0.4s 0.25s ease both;
+}
+
+/* Hide the duplicate text counter — progress bar row is the visible one */
+#progressIndicator {
+  display: none;
 }
 
 /* Keyboard hints */

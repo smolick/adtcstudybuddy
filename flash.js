@@ -48,9 +48,16 @@ function showCard() {
 		const { front, back, marker, category } = flashcards[currentIndex];
 		const side = flipped ? back : front;
 		const container = document.getElementById('cardContent');
+		const card = document.getElementById('flashcard');
 		const checkedCount = Array.from(
 			document.querySelectorAll('.category-section input[type="checkbox"]')
     ).filter(cb => cb.checked).length;
+
+    // Fade out, swap content, fade in
+    container.style.transition = 'opacity 0.15s ease';
+    container.style.opacity = '0';
+
+    setTimeout(() => {
     let html = '';
 		if ((document.getElementById('check-all').checked || checkedCount > 1) && category) {
 			html += `<div class="card-category">${prettyNames[category]}</div>`;
@@ -66,8 +73,10 @@ container.querySelectorAll('.marker')?.forEach(el => el.remove());
 		m.style.left  = marker.left;
 		container.appendChild(m);
     }
-    document.getElementById('flashcard').className =
-		`flashcard ${flipped ? 'back' : 'front'}`;
+    card.className = `flashcard ${flipped ? 'back' : 'front'}`;
+    container.style.opacity = '1';
+    }, 150);
+
     document.getElementById('progressIndicator').textContent =
 		`Card ${currentIndex + 1} of ${flashcards.length}`;
 
