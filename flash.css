@@ -512,8 +512,8 @@ body,
 }
 
 .flashcard.back {
-  background: linear-gradient(160deg, var(--surface) 0%, #1e2230 100%) !important;
-  border-color: var(--border) !important;
+  background: linear-gradient(160deg, #121822 0%, #182028 100%) !important;
+  border-color: var(--green) !important;
 }
 
 .flashcard.back::before {
@@ -524,7 +524,7 @@ body,
   transform: translateX(-50%);
   width: 60%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
   border-radius: 2px;
 }
 
@@ -532,11 +532,16 @@ body,
   line-height: 1.5;
 }
 
-/* Bold/strong inside flashcards uses blue accent, not green */
-.flashcard b, .flashcard strong,
-.card-content b, .card-content strong {
-  color: var(--accent) !important;
-  font-weight: 600;
+/* Bold/strong inside flashcards — stands out with accent color + subtle highlight */
+.flashcard b,
+.flashcard strong,
+.card-content b,
+.card-content strong {
+  color: var(--accent);
+  font-weight: 700;
+  background: var(--accent-glow);
+  padding: 1px 5px;
+  border-radius: 4px;
 }
 
 .card-content {
